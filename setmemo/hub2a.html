@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirupati HUB-2A</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+
+
+    <link rel="stylesheet" href="../../src/fromtotable.css">
+
+    <style>
+        * {
+            font-family: Arial;
+            font-weight: bold !important;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #mainTable,
+        #sname {
+            display: none !important;
+        }
+
+        #keepCenter {
+            position: relative;
+            left: 320px;
+        }
+
+        td,
+        th,
+        tr {
+            border: 1px solid black;
+        }
+
+        @media print {
+
+            #mainTable,
+            #sname {
+                display: block !important;
+            }
+
+            #keepCenter {
+                display: none;
+            }
+
+            .logo {
+                display: block !important;
+            }
+
+            #hrosign,
+            #head {
+                display: block !important;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="text-center" style="display: none;" id="head">
+        <h5>भारतीय डाक विभाग<br>Department of Posts :: India <br>प्रधान अभिलेख अधिकारी रेल डाक सेवा टि. पि. मंडल तिरुपति
+            कार्यालय - 517501<br>Head Record Office, RMS TP Dn., Tirupati - 517501 </h5>
+    </div>
+
+    <div id="sname" style="margin-top: 20px;">
+        <table cells='0' width="740" style="border-collapse:separate;">
+            <tr style="text-align: center;font-size: 20px;">
+                <th style="border-top-left-radius: 5px;border-top-right-radius: 5px;">
+                    <h5 style="padding-top: 5px;">SET MEMO</h5>
+                </th>
+            </tr>
+            <tr style="text-align: center;font-size: 20px;">
+                <th style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;">
+                    <h5 style="padding-top: 5px;" id="setTable">&nbsp;</h5>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <div class="row mt-1">
+        <datalist id="emp">
+            <option value="A Anuradha">A Anuradha</option>
+            <option value="A Mani">A Mani</option>
+            <option value="A Purusotham Raju">A Purusotham Raju</option>
+            <option value="AP Subbarayudu">AP Subbarayudu</option>
+            <option value="B Devaraja">B Devaraja</option>
+            <option value="B Gangadhar">B Gangadhar</option>
+            <option value="B Kalyan Kumar">B Kalyan Kumar</option>
+            <option value="B Lokanath Reddy">B Lokanath Reddy</option>
+            <option value="B Mahesh">B Mahesh</option>
+            <option value="B Md Rafi">B Md Rafi</option>
+            <option value="B Nagamma">B Nagamma</option>
+            <option value="B Raghuram Naik">B Raghuram Naik</option>
+            <option value="B Raja Naik">B Raja Naik</option>
+            <option value="B Ramesh Raju">B Ramesh Raju</option>
+            <option value="B Sai Ganesh">B Sai Ganesh</option>
+            <option value="B Sreekanth Babu">B Sreekanth Babu</option>
+            <option value="B Srilatha">B Srilatha</option>
+            <option value="B Srinivasulu">B Srinivasulu</option>
+            <option value="B Venu">B Venu</option>
+            <option value="B Vishnu Priya">B Vishnu Priya</option>
+            <option value="BBS Reddy">BBS Reddy</option>
+            <option value="BV Reddy">BV Reddy</option>
+            <option value="C Doraswamy">C Doraswamy</option>
+            <option value="C Haridas Reddy">C Haridas Reddy</option>
+            <option value="C Nirmala">C Nirmala</option>
+            <option value="C Rupesh Chandra">C Rupesh Chandra</option>
+            <option value="CH Lakshmi Devi">CH Lakshmi Devi</option>
+            <option value="CH Sai Kiran">CH Sai Kiran</option>
+            <option value="D Aruna">D Aruna</option>
+            <option value="D Durga Prasad">D Durga Prasad</option>
+            <option value="D Nandana Kumari">D Nandana Kumari</option>
+            <option value="D Sanjith Kumar">D Sanjith Kumar</option>
+            <option value="D Srinu Naik">D Srinu Naik</option>
+            <option value="E Jyoti">E Jyoti</option>
+            <option value="E Murali">E Murali</option>
+            <option value="G Ashok Kumar">G Ashok Kumar</option>
+            <option value="G Bala Krishna">G Bala Krishna</option>
+            <option value="G Bala Surendra">G Bala Surendra</option>
+            <option value="G Ekambaram">G Ekambaram</option>
+            <option value="G Ganesh">G Ganesh</option>
+            <option value="G Geeva">G Geeva</option>
+            <option value="G Giri Prasad">G Giri Prasad</option>
+            <option value="G Karthik">G Karthik</option>
+            <option value="G Kulai Basha">G Kulai Basha</option>
+            <option value="G Roop Sekhar">G Roop Sekhar</option>
+            <option value="G Sai Madhavi">G Sai Madhavi</option>
+            <option value="G Veeresh Babu">G Veeresh Babu</option>
+            <option value="G Vijay Kumar">G Vijay Kumar</option>
+            <option value="I Naveen Reddy">I Naveen Reddy</option>
+            <option value="I Sasi Rekha">I Sasi Rekha</option>
+            <option value="J Dilli Babu">J Dilli Babu</option>
+            <option value="J Murali Babu">J Murali Babu</option>
+            <option value="K Adi Narayana">K Adi Narayana</option>
+            <option value="K Babu Reddy">K Babu Reddy</option>
+            <option value="K Bhargava Varma">K Bhargava Varma</option>
+            <option value="K Chinnaiah">K Chinnaiah</option>
+            <option value="K Ganga">K Ganga</option>
+            <option value="K Lokesh">K Lokesh</option>
+            <option value="K Nagaraju">K Nagaraju</option>
+            <option value="K Nagendra">K Nagendra</option>
+            <option value="K Pavan Singh">K Pavan Singh</option>
+            <option value="K Poorna">K Poorna</option>
+            <option value="K Poornima">K Poornima</option>
+            <option value="K Rajendran">K Rajendran</option>
+            <option value="K Rakesh">K Rakesh</option>
+            <option value="K Ramanjulu">K Ramanjulu</option>
+            <option value="K Sai Durga">K Sai Durga</option>
+            <option value="K Saravana">K Saravana</option>
+            <option value="K Shiva Kumar">K Shiva Kumar</option>
+            <option value="K Srikanth">K Srikanth</option>
+            <option value="K Srinivasulu">K Srinivasulu</option>
+            <option value="K Sunil">K Sunil</option>
+            <option value="K Suresh">K Suresh</option>
+            <option value="L Pranav">L Pranav</option>
+            <option value="M Bharath Kumar">M Bharath Kumar</option>
+            <option value="M Chandra Mouli">M Chandra Mouli</option>
+            <option value="M Guravaiah">M Guravaiah</option>
+            <option value="M Harish">M Harish</option>
+            <option value="M Jayaram">M Jayaram</option>
+            <option value="M Kishore">M Kishore</option>
+            <option value="M Kupendra Kumar Rao">M Kupendra Kumar Rao</option>
+            <option value="M Muni Reddy">M Muni Reddy</option>
+            <option value="M Nagesh">M Nagesh</option>
+            <option value="M Nirmala">M Nirmala</option>
+            <option value="M Rupesh Kumar">M Rupesh Kumar</option>
+            <option value="M Saraswathi">M Saraswathi</option>
+            <option value="M Sri Hari">M Sri Hari</option>
+            <option value="M Thej Kumar">M Thej Kumar</option>
+            <option value="M Vasanth Kumar">M Vasanth Kumar</option>
+            <option value="M Venkatesh">M Venkatesh</option>
+            <option value="MV Ramana Murthy">MV Ramana Murthy</option>
+            <option value="N Anjaneyulu">N Anjaneyulu</option>
+            <option value="N Aruna Jyoti">N Aruna Jyoti</option>
+            <option value="N Ashok Kumar">N Ashok Kumar</option>
+            <option value="N Hari Krishna">N Hari Krishna</option>
+            <option value="N Hari Prasad">N Hari Prasad</option>
+            <option value="N Manjula Reddy">N Manjula Reddy</option>
+            <option value="N Murali Prasad">N Murali Prasad</option>
+            <option value="N Neeraja">N Neeraja</option>
+            <option value="N Om Shankar">N Om Shankar</option>
+            <option value="N Pradeep">N Pradeep</option>
+            <option value="N Raja Sekhar">N Raja Sekhar</option>
+            <option value="N Shiva">N Shiva</option>
+            <option value="N Sridhar">N Sridhar</option>
+            <option value="N Subramanyam">N Subramanyam</option>
+            <option value="N Subramanyam Reddy">N Subramanyam Reddy</option>
+            <option value="N Sudharshan">N Sudharshan</option>
+            <option value="N Vani">N Vani</option>
+            <option value="P Archana">P Archana</option>
+            <option value="P Bramaiah Shetty">P Bramaiah Shetty</option>
+            <option value="P Chandraiah">P Chandraiah</option>
+            <option value="P Dheeren">P Dheeren</option>
+            <option value="P Jayamma">P Jayamma</option>
+            <option value="P Koteswara Sharma">P Koteswara Sharma</option>
+            <option value="P Mahaboob Basha">P Mahaboob Basha</option>
+            <option value="P Mahaboob Sharief">P Mahaboob Sharief</option>
+            <option value="P Muni Lakshmi">P Muni Lakshmi</option>
+            <option value="P Parthasarathy">P Parthasarathy</option>
+            <option value="P Pratap Reddy">P Pratap Reddy</option>
+            <option value="P Purnima">P Purnima</option>
+            <option value="P Ravi">P Ravi</option>
+            <option value="P Subbaiah">P Subbaiah</option>
+            <option value="P Sudharshan">P Sudharshan</option>
+            <option value="P Sunil Kumar Reddy">P Sunil Kumar Reddy</option>
+            <option value="P Uma Maheswar">P Uma Maheswar</option>
+            <option value="P Varalakshmi">P Varalakshmi</option>
+            <option value="P Venkataswamy">P Venkataswamy</option>
+            <option value="P Venkatesh">P Venkatesh</option>
+            <option value="PY Pavan Kumar Reddy">PY Pavan Kumar Reddy</option>
+            <option value="R Pedda Reddemma">R Pedda Reddemma</option>
+            <option value="R Rajendran">R Rajendran</option>
+            <option value="R Sandeep Kumar">R Sandeep Kumar</option>
+            <option value="R Suresh">R Suresh</option>
+            <option value="RS Chandra Sekhar">RS Chandra Sekhar</option>
+            <option value="S Chakrapani">S Chakrapani</option>
+            <option value="S Geetha Sri">S Geetha Sri</option>
+            <option value="S Lohitha Sri">S Lohitha Sri</option>
+            <option value="S Madhan Mohan Reddy">S Madhan Mohan Reddy</option>
+            <option value="S Mahaboob Basha">S Mahaboob Basha</option>
+            <option value="S Maruthi Prasad Reddy">S Maruthi Prasad Reddy</option>
+            <option value="S Mounika">S Mounika</option>
+            <option value="S Pravallika Jeevan">S Pravallika Jeevan</option>
+            <option value="S Subramanyam">S Subramanyam</option>
+            <option value="S Suresh Kumar">S Suresh Kumar</option>
+            <option value="S Usman">S Usman</option>
+            <option value="S Vamsi Priya">S Vamsi Priya</option>
+            <option value="SA Kadher Basha">SA Kadher Basha</option>
+            <option value="SKM Basha">SKM Basha</option>
+            <option value="SKMD Basha">SKMD Basha</option>
+            <option value="SSK Gani Reddy">SSK Gani Reddy</option>
+            <option value="SVT Reddy">SVT Reddy</option>
+            <option value="T Dilip Kumar">T Dilip Kumar</option>
+            <option value="T Kannaiah">T Kannaiah</option>
+            <option value="T Kavitha">T Kavitha</option>
+            <option value="T Manoj">T Manoj</option>
+            <option value="T Sasi Kumar">T Sasi Kumar</option>
+            <option value="T Tirumaleswari">T Tirumaleswari</option>
+            <option value="U Padmavathi">U Padmavathi</option>
+            <option value="V Dilli Sekhar">V Dilli Sekhar</option>
+            <option value="V Hari Krishna">V Hari Krishna</option>
+            <option value="V Hari Krishna">V Hari Krishna</option>
+            <option value="V Munnelu">V Munnelu</option>
+            <option value="V Nagendra Babu">V Nagendra Babu</option>
+            <option value="V Rajesh">V Rajesh</option>
+            <option value="V Ravindra">V Ravindra</option>
+            <option value="V Samba Siva Rao">V Samba Siva Rao</option>
+            <option value="V Selvi">V Selvi</option>
+            <option value="V Subramanyam">V Subramanyam</option>
+            <option value="V Suneetha">V Suneetha</option>
+            <option value="V Trilokeswar">V Trilokeswar</option>
+            <option value="VR Siva Narayana">VR Siva Narayana</option>
+            <option value="Y Maneendra Reddy">Y Maneendra Reddy</option>
+            <option value="Y Purohit">Y Purohit</option>
+            <option value="Y Sathish">Y Sathish</option>
+            <option value="O/S Arranged">O/S Arranged</option>
+
+            <option value="N/A">N/A</option>
+            <option value="T Manjula">T Manjula</option>
+            <option value="I Penchalaiah">I Penchalaiah</option>
+            <option value="A Sreekanth">A Sreekanth</option>
+            <option value="Nikhil Shukla">Nikhil Shukla</option>
+            <option value="Abhishek Bairava">Abhishek Bairava</option>
+            <option value="Arushi Kumari">Arushi Kumari</option>
+            <option value="A Balaji">A Balaji</option>
+            <option value="U Rajeswari">U Rajeswari</option>
+            <option value="B Shaik Tahira">B Shaik Tahira</option>
+            <option value="A Hemalatha">A Hemalatha</option>
+            <option value="G Balu Aravind">G Balu Aravind</option>
+            <option value="N Pavani">N Pavani</option>
+            <option value="BR Rojavathi">BR Rojavathi</option>
+            <option value="M Rajeswari">M Rajeswari</option>
+            <option value="A Kamakshi">A Kamakshi</option>
+            <option value="K Sreekanth">K Sreekanth</option>
+            <option value="V Swathi">V Swathi</option>
+            <option value="MTV Sai Kumar">MTV Sai Kumar</option>
+            <option value="G Hari Babu">G Hari Babu</option>
+
+        </datalist>
+        <div class="col-10 text-center" id="keepCenter">
+            <formm>
+                <div class="d-flex gap-5">
+                    <div class="col-3">
+                        <div class="">
+                            <input type="text" name="HSA" id="HSA" placeholder="HSA" class="form-control" list="emp">
+                        </div>
+                        <div class="">
+                            <input type="text" name="SUP" id="SUP" placeholder="Supervisor" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="MSA1" id="MSA1" placeholder="MSA-1" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="MSA2" id="MSA2" placeholder="MSA-2" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="SPSA1" id="SPSA1" placeholder="SPSA-1" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="SPSA2" id="SPSA2" placeholder="SPSA-2" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="SPSA3" id="SPSA3" placeholder="SPSA-3" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="SPSA4" id="SPSA4" placeholder="SPSA-4" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="SPSA5" id="SPSA5" placeholder="SPSA-5" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="SPSA6" id="SPSA6" placeholder="SPSA-6" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="SPSA7" id="SPSA7" placeholder="SPSA-7" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="SPSA8" id="SPSA8" placeholder="SPSA-8" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+
+                    </div>
+
+                    <div class="col-3">
+                        <div>
+                            <input type="text" name="PSA1" id="PSA1" placeholder="PSA-1" class="form-control"
+                                list="emp">
+                        </div>
+
+                        <div>
+                            <input type="text" name="PSA2" id="PSA2" placeholder="PSA-2" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input list="emp" type="text" name="MG1" id="MG1" placeholder="MG1"
+                                class=" mt-3 form-control">
+                        </div>
+                        <div>
+                            <input type="text" name="MG2" id="MG2" placeholder="MG2" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+
+                        <div>
+                            <input type="text" name="MTS1" id="MTS1" placeholder="MTS-1" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="MTS2" id="MTS2" placeholder="MTS-2" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="MTS3" id="MTS3" placeholder="MTS-3" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="MTS4" id="MTS4" placeholder="MTS-4" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="MTS5" id="MTS5" placeholder="MTS-5" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div>
+                            <input type="text" name="MTS6" id="MTS6" placeholder="MTS-6" class="mt-3 form-control"
+                                list="emp">
+                        </div>
+                        <div class="mt-3 text-align-left">
+                            <input type='checkbox' name="Rajanaik" id="checkRaja"
+                                class="form-check-input bg-danger"><span class="fs-6 text-danger">
+                                &nbsp;Tick Me if Raja Naik not Available</span>
+                        </div>
+
+                        <div class="mt-3 text-align-left">
+                            <input type='checkbox' name="dillibabu" id="checkDilli"
+                                class="form-check-input bg-danger"><span class="fs-6 text-danger">
+                                &nbsp;Tick Me if Dilli Babu not Available</span>
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <button class=" btn btn-success w-50 " onclick="bodyLoad()"><span
+                                class="bi bi-arrow-right fs-5"> Transfer</span></button>
+                        <button class="btn btn-success w-50 mt-3" id="print" onclick="javascript:print()"><span
+                                class="bi bi-printer fs-5"></span> Print</button>
+                        <button class="btn btn-success w-50 mt-3" onclick="ValueReset()" type="reset"><span
+                                class="bi bi-x-lg fs-5"> Clear</span></button>
+                        <a href="../../index.html">
+                            <button class="btn btn-success w-50 mt-3" onclick="PreviewClick()" disabled><span
+                                    class="bi bi-house-door fs-5">
+                                    Preview</span></button>
+                        </a>
+                    </div>
+                </div>
+
+
+                </form>
+        </div>
+        <div class="col-2" id="mainTable">
+            <table width="740" contenteditable="true" style="border-collapse: separate;border-spacing: 0px;">
+                <thead>
+                    <tr class="toprow">
+                        <th rowspan="2" width="125" style="border-top-left-radius: 7px;">Designation</th>
+                        <th rowspan="2" width="310px">Name of the Official<br>( Shri | Smt | Kum )</th>
+                        <th rowspan="2" width="110">Designation</th>
+                        <th rowspan="2" width="330px">Name of the Official<br>( Shri | Smt | Kum )</th>
+                        <th colspan="2" width="120" style="border-top-right-radius: 7px;">Working Hours</th>
+                    </tr>
+                    <tr class="toprow">
+                        <th width="75">From</th>
+                        <th width="75">To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="rightAlign">HSA &nbsp;</td>
+                        <td id="hsatest" style="font-size: 15px;" class="indent"></td>
+                        <td id="rightAlign">MG-1 &nbsp;</td>
+                        <td id="mg1test" class="indent"></td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">Supervisor &nbsp;</td>
+                        <td id="suptest" class="indent"></td>
+                        <td id="rightAlign">MG-2 &nbsp;</td>
+                        <td id="mg2test" class="indent"></td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <td id="rightAlign">MSA-1 &nbsp;</td>
+                        <td id="msa1test" class="indent"></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">MSA-2 &nbsp;</td>
+                        <td id="msa2test" class="indent"></td>
+                        <td id="rightAlign">MTS-1 &nbsp;</td>
+                        <td id="mts1test" class="indent"></td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td id="rightAlign">MTS-2 &nbsp;</td>
+                        <td id="mts2test" class="indent"></td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">SPSA-1 &nbsp;</td>
+                        <td id="spsa1test" class="indent"></td>
+                        <td id="rightAlign">MTS-3 &nbsp;</td>
+                        <td id="mts3test" class="indent"></td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">SPSA-2 &nbsp;</td>
+                        <td id="spsa2test" class="indent"></td>
+                        <td id="rightAlign">MTS-4 &nbsp;</td>
+                        <td id="mts4test" class="indent"></td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">SPSA-3 &nbsp;</td>
+                        <td id="spsa3test" class="indent"></td>
+                        <td id="rightAlign">MTS-5 &nbsp;</td>
+                        <td id="mts5test" class="indent"></td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">SPSA-4 &nbsp;</td>
+                        <td id="spsa4test" class="indent"></td>
+                        <td id="rightAlign">MTS-6 &nbsp;</td>
+                        <td id="mts6test" class="indent"></td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">SPSA-5 &nbsp;</td>
+                        <td id="spsa5test" class="indent"></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">SPSA-6 &nbsp;</td>
+                        <td id="spsa6test" class="indent"></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">SPSA-7 &nbsp;</td>
+                        <td id="spsa7test" class="indent"></td>
+                        <td id="rightAlign">GDS-1 &nbsp;</td>
+                        <td class="indent">O/S Arranged</td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">20:30:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">BNPL|SPSA8 &nbsp;</td>
+                        <td id="spsa8test" class="indent"></td>
+                        <td id="rightAlign">GDS-2 &nbsp;</td>
+                        <td class="indent">O/S Arranged</td>
+                        <td align="center">17:30:00</td>
+                        <td align="center">20:30:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td id="rightAlign">GDS-3 &nbsp;</td>
+                        <td class="indent" id="raja">B Raja Naik</td>
+                        <td align="center">18:00:00</td>
+                        <td align="center">23:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td id="rightAlign">GDS-4 &nbsp;</td>
+                        <td class="indent" id="dilli">J Dilli Babu</td>
+                        <td align="center">20:00:00</td>
+                        <td align="center">01:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td id="rightAlign">GDS-5 &nbsp;</td>
+                        <td class="indent">O/S Arranged</td>
+                        <td align="center">01:00:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">PSA-1 &nbsp;</td>
+                        <td id="psa1test" class="indent"></td>
+                        <td id="rightAlign">GDS-6 &nbsp;</td>
+                        <td class="indent">O/S Arranged</td>
+                        <td align="center">01:00:00</td>
+                        <td align="center">06:00:00</td>
+                    </tr>
+                    <tr>
+                        <td id="rightAlign">PSA-2 &nbsp;</td>
+                        <td id="psa2test" class="indent"></td>
+                        <td id="rightAlign">GDS-7 &nbsp;</td>
+                        <td class="indent">O/S Arranged<br> &nbsp;&nbsp;( 04:00 To 07:00 TMO-1 )</td>
+                        <td align="center">02:00:00<br>04:00:00</td>
+                        <td align="center">04:00:00<br>07:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td id="rightAlign">GDS-8 &nbsp;</td>
+                        <td class="indent">O/S Arranged<br> &nbsp;&nbsp;( 04:00 To 08:00 TMO-1 )</td>
+                        <td align="center">03:00:00<br>04:00:00</td>
+                        <td align="center">04:00:00<br>08:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td id="rightAlign">GDS-9 &nbsp;</td>
+                        <td class="indent">O/S Arranged <br> &nbsp;&nbsp;( 04:00 To 08:00 TMO-1 )</td>
+                        <td align="center">03:00:00<br>04:00:00</td>
+                        <td align="center">04:00:00<br>08:00:00</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom-left-radius: 7px;">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td style="border-bottom-right-radius: 7px;">&nbsp;</td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="logo" style="display: none;">
+        <div class="leftlogo">
+            <img src="../../assests/logo.png" width="140px" height="70px" alt="logo here">
+        </div>
+        <div class="rightlogo">
+            <img src="../../assests/ashok.png" width="100px" height="70px" alt="Ashoka Symbol here">
+
+        </div>
+    </div>
+    <div style="text-align: end;margin-right: 15px;display: none;" id=hrosign>
+        <p>प्रधान अभिलेख अधिकारी <br> रेल डाक सेवा टि.पि. मंडल तिरुपति-517 501 <br>Head Record Officer<br> RMS TP Dn.,
+            Tirupati - 517501</p>
+    </div>
+
+    <script>
+        function bodyLoad() {
+            alert("Data Transfer Success...!\n\n\nChoose Print Option to Print SET Memo");
+
+            var today = new Date();
+            let days = ["Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var mdate = `${days[today.getDay()]}, ${today.getDate()} - ${months[today.getMonth()]} - ${today.getFullYear()}`;
+
+            document.getElementById("setTable").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+
+            var tdhsa = document.getElementById("HSA").value;
+            var tdsup = document.getElementById("SUP").value;
+
+            var tdmsa1 = document.getElementById("MSA1").value;
+            var tdmsa2 = document.getElementById("MSA2").value;
+
+            var spsa1 = document.getElementById("SPSA1").value;
+            var spsa2 = document.getElementById("SPSA2").value;
+            var spsa3 = document.getElementById("SPSA3").value;
+            var spsa4 = document.getElementById("SPSA4").value;
+            var spsa5 = document.getElementById("SPSA5").value;
+            var spsa6 = document.getElementById("SPSA6").value;
+            var spsa7 = document.getElementById("SPSA7").value;
+            var spsa8 = document.getElementById("SPSA8").value;
+
+            var psa1 = document.getElementById("PSA1").value;
+            var psa2 = document.getElementById("PSA2").value;
+
+            var mg1 = document.getElementById("MG1").value;
+            var mg2 = document.getElementById("MG2").value;
+
+            var mts1 = document.getElementById("MTS1").value;
+            var mts2 = document.getElementById("MTS2").value;
+            var mts3 = document.getElementById("MTS3").value;
+            var mts4 = document.getElementById("MTS4").value;
+            var mts5 = document.getElementById("MTS5").value;
+            var mts6 = document.getElementById("MTS6").value;
+
+            document.getElementById("hsatest").innerHTML = tdhsa;
+            document.getElementById("suptest").innerHTML = tdsup;
+
+            document.getElementById("msa1test").innerHTML = tdmsa1;
+            document.getElementById("msa2test").innerHTML = tdmsa2;
+
+            document.getElementById("spsa1test").innerHTML = spsa1;
+            document.getElementById("spsa2test").innerHTML = spsa2;
+            document.getElementById("spsa3test").innerHTML = spsa3;
+            document.getElementById("spsa4test").innerHTML = spsa4;
+            document.getElementById("spsa5test").innerHTML = spsa5;
+            document.getElementById("spsa6test").innerHTML = spsa6;
+            document.getElementById("spsa7test").innerHTML = spsa7;
+            document.getElementById("spsa8test").innerHTML = spsa8;
+
+            document.getElementById("psa1test").innerHTML = psa1;
+            document.getElementById("psa2test").innerHTML = psa2;
+
+            document.getElementById("mg1test").innerHTML = mg1;
+            document.getElementById("mg2test").innerHTML = mg2;
+
+            document.getElementById("mts1test").innerHTML = mts1;
+            document.getElementById("mts2test").innerHTML = mts2;
+            document.getElementById("mts3test").innerHTML = mts3;
+            document.getElementById("mts4test").innerHTML = mts4;
+            document.getElementById("mts5test").innerHTML = mts5;
+            document.getElementById("mts6test").innerHTML = mts6;
+
+            if (document.getElementById("checkRaja").checked) {
+                document.getElementById("raja").innerHTML = "O/S Arranged";
+            } else {
+                document.getElementById("raja").innerHTML = "B Raja Naik";
+            }
+
+            if (document.getElementById("checkDilli").checked) {
+                document.getElementById("dilli").innerHTML = "O/S Arranged";
+            } else {
+                document.getElementById("dilli").innerHTML = "J Dilli Babu";
+            }
+
+        }
+
+        function ValueReset() {
+            var ch = confirm("Do you want to reset all fields...?");
+            if (ch === true) {
+                HSA.value = "";
+                SUP.value = "";
+
+                MSA1.value = "";
+                MSA2.value = "";
+
+                SPSA1.value = "";
+                SPSA2.value = "";
+                SPSA3.value = "";
+                SPSA4.value = "";
+                SPSA5.value = "";
+                SPSA6.value = "";
+                SPSA7.value = "";
+                SPSA8.value = "";
+
+                PSA1.value = "";
+                PSA2.value = "";
+
+                MG1.value = "";
+                MG2.value = "";
+
+                MTS1.value = "";
+                MTS2.value = "";
+                MTS3.value = "";
+                MTS4.value = "";
+                MTS5.value = "";
+                MTS6.value = "";
+                alert("All Fields are Cleared Successfully.........");
+            }
+
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

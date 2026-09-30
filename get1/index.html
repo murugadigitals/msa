@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        * {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        th {
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            /* border: 2px solid red; */
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+
+        body {
+            display: grid;
+            grid-template-columns: 4fr 8fr;
+        }
+
+        #countSignContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        #countContainer p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        #countContainer {
+            text-align: end;
+        }
+
+        #tableDiv {
+            height: 500px;
+            overflow: scroll;
+            /* display: none; */
+        }
+
+        .btn:hover {
+            background-color: red;
+            color: white;
+        }
+
+        @media print {
+
+            body {
+                display: block;
+            }
+
+            .nodisplay {
+                display: none;
+            }
+
+            table {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            #tableDiv {
+                display: block;
+            }
+
+        }
+    </style>
+    <script src="./script.js"></script>
+</head>
+
+<body>
+
+    <div style="text-align: end;" class="nodisplay p-5">
+        <div class="mt-5 d-flex align-items-center gap-2">
+            <!-- <input type="text" id="uname" placeholder="Enter Office Name"> -->
+            <select name="nameSelect" id="uname" onchange="searchData()" class="form-select form-input-group">
+                <option value="Nellore ICH">Nellore TMO</option>
+                <option value="Cuddapah ICH">Cuddapah TMO</option>
+                <option value="Chennai NSH">Chennai Central TMO</option>
+                <option value="Hyderabad NSH">Hyderabad Dec RSTMO</option>
+                <option value="Bengaluru NSH">Bengaluru B/S TMO</option>
+            </select>
+            <button onclick="javascript:window.print()" class="bi bi-printer-fill btn btn-info"></button>
+        </div>
+
+        <div class="mt-2">
+            <button onclick="getBags()" class="btn btn-info w-100">All Records</button>
+        </div>
+        <div class="mt-2">
+            <button onclick="getChennai()" class="btn btn-info w-100">Get Chennai</button>
+        </div>
+        <div class="mt-2">
+            <button onclick="getVayalpad()" class="btn btn-info w-100">Get Vayalpad Bags</button>
+        </div>
+        <div class="mt-2">
+            <button onclick="getChittor()" class="btn btn-info w-100">Get Chittor Bags</button>
+        </div>
+        <br>
+        <div class="mt-2">
+            <input type="text" placeholder="Bag Number to Delete" id="deleteBag" class="form-control mb-2">
+            <button onclick="deleteBagClick()" class="btn btn-info w-100">Delete Bag</button>
+        </div>
+    </div>
+    <div id=tableDiv class="py-5">
+        <div class="text-center">
+            <div>Department of Posts :: India</div>
+            <div>Tirupati TMO - 517501</div>
+            <div id="maillist"></div>
+        </div>
+        <br>
+        <table>
+            <thead>
+
+                <tr>
+                    <th style="border-top-left-radius: 10px;">SNO</th>
+                    <th>Bag Number</th>
+                    <th>Bag Type</th>
+                    <th>From Office</th>
+                    <th style="border-top-right-radius: 10px;">Bag Closed To</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+            <tfoot>
+                <td style="border-bottom-left-radius: 10px;">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td style="border-bottom-right-radius: 10px;">&nbsp;</td>
+            </tfoot>
+
+        </table>
+        <br><br>
+        <div id="countSignContainer">
+            <div id="signContainer">
+                <img src="./images/sing.png" alt="" width="120" height="80"><br>
+
+                <p style="margin:0;line-height: 1.5;">MailList Prepared By</p>
+                <p style="margin:0;line-height: 1.5;">Sri Hari Muppori ( 10163797 )</p>
+
+            </div>
+            <div id="countContainer">
+                <p id="tbBags"></p>
+                <p id="spBags"></p>
+                <p id="omBags"></p>
+                <p id="plBags"></p>
+                <p id="mpBags"></p>
+                <p id="totalBags"></p>
+                <p id="dangerBagNumber"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

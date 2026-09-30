@@ -1,0 +1,38 @@
+<!DOCTYPE html> // Clipboard example
+<html lang="en"> // windows + v
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name" type="text">
+
+    <button onclick="copyName()">
+        Copy
+    </button>
+
+    <button onclick="pasteName()">
+        Paste
+    </button>
+    <script src="./clipboard.js"></script>
+</body>
+
+</html>
+
+/*
+function copyName() {
+const name = document.getElementById("name").value;
+
+navigator.clipboard.writeText(name);
+}
+
+async function pasteName() {
+const text = await navigator.clipboard.readText();
+
+document.getElementById("name").value = text;
+}
+
+*/
