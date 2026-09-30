@@ -4,6 +4,9 @@ function displayTable(students) {
   const tbody = document.getElementById("tbody");
 
   tbody.innerHTML = "";
+  students.sort((a, b) =>
+    a["To Office Name"].localeCompare(b["To Office Name"]),
+  );
 
   students.forEach((student, index) => {
     const tr = document.createElement("tr");
@@ -128,10 +131,6 @@ async function getBags() {
   const response = await fetch("http://localhost:3527/allbags");
   const data = await response.json();
   const students = [...data];
-  // students.sort((a, b) => b.Count - a.Count);
-  students.sort((a, b) =>
-    a["To Office Name"].localeCompare(b["To Office Name"]),
-  );
   renderStudents(students);
 }
 
@@ -143,34 +142,42 @@ async function getBagsMG2() {
   const response = await fetch("http://localhost:3527/allbags");
   const data = await response.json();
   const students = [...data];
-  // students.sort((a, b) => b.Count - a.Count);
-  students.sort((a, b) =>
-    a["To Office Name"].localeCompare(b["To Office Name"]),
-  );
   renderStudents(students);
 }
 
-async function getChennai() {
+async function getBagsTMO1() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : MG Tirupati TMO - 1 &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/allbags");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getChennaiSide() {
   const maillist = document.getElementById("maillist");
   maillist.innerHTML = `Maillist To : Chennai Central TMO &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
   maillist.style.textDecoration = "underline";
 
-  const response = await fetch("http://localhost:3527/chennai");
+  const response = await fetch("http://localhost:3527/chennaiside");
   const data = await response.json();
   const students = [...data];
-  students.sort((a, b) => b.Count - a.Count);
   renderStudents(students);
 }
 
-async function getVayalpad() {
+async function getV10IN() {
   const maillist = document.getElementById("maillist");
-  maillist.innerHTML = `Maillist To : Vayalpad S.O &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.innerHTML = `Maillist To : V - 10 - IN  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
   maillist.style.textDecoration = "underline";
 
-  const response = await fetch("http://localhost:3527/vayalpad");
+  const response = await fetch("http://localhost:3527/v10in");
   const data = await response.json();
   const students = [...data];
-  students.sort((a, b) => b.Count - a.Count);
+  students.sort((a, b) =>
+    a["To Office Name"].localeCompare(b["To Office Name"]),
+  );
   renderStudents(students);
 }
 

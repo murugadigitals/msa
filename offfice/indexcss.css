@@ -1,0 +1,139 @@
+* {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+th {
+  font-weight: bold;
+  padding: 10px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  /* border: 2px solid red; */
+}
+
+td,
+th {
+  border: 1px solid black;
+}
+
+th {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#header {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#countSignContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#countContainer p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+#countContainer {
+  text-align: end;
+}
+
+#tableDiv {
+  height: 600px;
+  overflow: scroll;
+  /* display: none; */
+}
+
+.btn:hover {
+  background-color: red;
+  color: white;
+}
+
+#buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#buttonsContainer > div {
+  width: 180px;
+}
+
+#usual,
+#unusual,
+#total,
+#border {
+  position: absolute;
+}
+
+#usual {
+  top: 20px;
+  right: 215px;
+  text-align: center;
+}
+
+#border {
+  top: 50px;
+  right: 200px;
+  width: 45px;
+}
+
+#unusual {
+  top: 60px;
+  right: 215px;
+  text-align: center;
+}
+
+#total {
+  top: 38px;
+  right: 178px;
+}
+
+#rightAlign {
+  text-align: start;
+  text-indent: 10px;
+}
+
+@media print {
+  body {
+    display: block;
+  }
+
+  .nodisplay {
+    display: none;
+  }
+
+  table {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #tableDiv {
+    display: block;
+  }
+}

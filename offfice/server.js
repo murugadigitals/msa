@@ -26,7 +26,7 @@ db.connect((err) => {
 
 app.get("/allbags", async (req, res) => {
   try {
-    const sql = "SELECT * FROM SPEED";
+    const sql = "SELECT * FROM PARCEL";
     db.query(sql, (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -43,10 +43,10 @@ app.get("/allbags", async (req, res) => {
     });
   }
 });
-app.get("/chennai", async (req, res) => {
+app.get("/chennaiside", async (req, res) => {
   try {
     const sql =
-      "SELECT * FROM SPEED WHERE `To Office Name` IN('Chennai NSH','Coimbatore NSH','Madurai NSH')";
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Chennai PH','Arsikere PH','Bengaluru Parcel Hub','Coimbatore PH','Kochi PH','Kozhikode PH','Madurai PH','Mangaluru PH','Mysuru PH','Salem PH','Thiruvananthapuram PH','Thrissur PH','Trichy PH')";
     db.query(sql, (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -63,10 +63,10 @@ app.get("/chennai", async (req, res) => {
     });
   }
 });
-app.get("/vayalpad", async (req, res) => {
+app.get("/v10in", async (req, res) => {
   try {
     const sql =
-      "SELECT * FROM SPEED WHERE `To Office Name` IN('Tarigonda S.O','Gurramkonda S.O','Vayalpad S.O','Cherlopalle S.O')";
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Eluru PH','Rajamundry PH','Srikakulam Road  PH','Visakhapatnam PH','Patna PH','Jamshedpur PH','Shillong PH','Agartala PH','Berhampur PH','KOLKATA PH','Bhubaneswar PH','Guwahati PH','Imphal PH','Muzaffarpur PH','Sambalpur PH','Siliguri PH')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -89,7 +89,7 @@ app.get("/chittor", async (req, res) => {
 
   try {
     const sql =
-      "SELECT * FROM SPEED WHERE `To Office Name` IN('Iral S.O','Iruvaram S.O','Arugonda S.O','Puthapapattu S.O','Chittoorr North','Vengalrajukuppam S.O','Kothapalle S.O','Murukambattu S.O','Chittoor H.O','Ctr Collectorate S.O','Penumur S.O','Ramapuram S.O (Chittoor)','Gangadhara Nellore S.O','Yadamari S.O','Thugundram S.O','Kanipakam S.O')";
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Iral S.O','Iruvaram S.O','Arugonda S.O','Puthapapattu S.O','Chittoorr North','Vengalrajukuppam S.O','Kothapalle S.O','Murukambattu S.O','Chittoor H.O','Ctr Collectorate S.O','Penumur S.O','Ramapuram S.O (Chittoor)','Gangadhara Nellore S.O','Yadamari S.O','Thugundram S.O','Kanipakam S.O')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
