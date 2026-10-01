@@ -114,8 +114,8 @@ body {
   right: 178px;
 }
 
-#rightAlign {
-  text-align: start;
+.rightAlign {
+  text-align: center;
   text-indent: 10px;
 }
 

@@ -66,7 +66,90 @@ app.get("/chennaiside", async (req, res) => {
 app.get("/v10in", async (req, res) => {
   try {
     const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Eluru PH','Rajamundry PH','Srikakulam Road  PH','Visakhapatnam PH','Patna PH','Jamshedpur PH','Shillong PH','Agartala PH','Berhampur PH','KOLKATA PH','Bhubaneswar PH','Guwahati PH','Imphal PH','Muzaffarpur PH','Sambalpur PH','Siliguri PH')";
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Eluru PH','Rajamundry PH','Srikakulam Road  PH','Visakhapatnam PH','Patna PH','Jamshedpur PH','Shillong PH','Agartala PH','Berhampur PH','KOLKATA PH','Bhubaneswar PH','Guwahati PH','Imphal PH','Muzaffarpur PH','Sambalpur PH','Siliguri PH','Visakapatnam NSH','Srikakulam Road ICH','Eluru ICH','Rajamundry ICH','Srikakulam Road RMS  L2U','Visakhapatnam RMS  L1U','Rajamundry RMS  L2U','Eluru RMS  L2U')";
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+app.get("/nellore", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Nellore ICH','Nellore PH','Nellore RMS  L2U')";
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/guntur", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Guntur ICH','Guntur PH','Guntur RMS  L2U')";
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/ongole", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Ongole ICH','Ongole PH','Ongole RMS  L2U')";
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/vijayawada", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Vijayawada NSH','Vijayawada PH','Vijayawada Sub foreign Post office','Vijayawada RMS  L1U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");

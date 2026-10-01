@@ -16,14 +16,14 @@
     <div style="text-align: end;" class="nodisplay p-2">
         <div class="mt-5 d-flex align-items-center gap-2">
             <!-- <input type="text" id="uname" placeholder="Enter Office Name"> -->
-            <select name="nameSelect" id="uname" onchange="searchData()" class="form-select form-input-group">
+            <select name="nameSelect" id="uname" onchange="searchData()" class="form-select form-input-group d-none">
                 <option value="Nellore ICH">Nellore TMO</option>
                 <option value="Cuddapah ICH">Cuddapah TMO</option>
                 <option value="Chennai NSH">Chennai Central TMO</option>
                 <option value="Hyderabad NSH">Hyderabad Dec RSTMO</option>
                 <option value="Bengaluru NSH">Bengaluru B/S TMO</option>
             </select>
-            <button onclick="printReport()" class="bi bi-printer-fill btn btn-info"></button>
+
         </div>
         <br>
         <div id="buttonsContainer" class="p-4">
@@ -43,6 +43,9 @@
                 <button onclick="getV10IN()" class="btn btn-info w-100">V - 10 - IN</button>
             </div>
             <div class="mt-3">
+                <button onclick="getNellore()" class="btn btn-info w-100">Nellore TMO</button>
+            </div>
+            <div class="mt-3">
                 <button onclick="getGuntur()" class="btn btn-info w-100">Guntur TMO</button>
             </div>
             <div class="mt-3">
@@ -51,9 +54,27 @@
             <div class="mt-3">
                 <button onclick="getVijayawada()" class="btn btn-info w-100">Vijayawada TMO</button>
             </div>
+            <div class="mt-3">
+                <button onclick="getVijayawada()" class="btn btn-info w-100">Kadapa TMO</button>
+            </div>
+            <div class="mt-3">
+                <button onclick="getVijayawada()" class="btn btn-info w-100">Kurnool TMO</button>
+            </div>
+            <div class="mt-3">
+                <button onclick="getVijayawada()" class="btn btn-info w-100">Ananthapur TMO</button>
+            </div>
+            <div class="mt-3">
+                <button onclick="getVijayawada()" class="btn btn-info w-100">AG - 27 - IN</button>
+            </div>
+
+
+
+
+
 
             <div class="mt-3">
-                <button onclick="generateMaillist()" class="btn btn-info w-100">Print MailList </button>
+                <button onclick="printReport()" class="bi bi-printer-fill btn btn-outline-dark ms-auto w-100"> Print
+                    MailList</button>
             </div>
         </div>
         <br>
@@ -123,7 +144,7 @@
             </div>
 
         </div>
-        <div id="totalFigure" style="width: 100px;background-color: yellow;">
+        <div id="totalFigure" style="width: 100px;">
             <div id="usual"></div>
             <div id="unusual"></div>
             <div style="border: 2px solid black;" id="border"></div>

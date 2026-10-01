@@ -17,8 +17,11 @@ function displayTable(students) {
             <td width="230px">${student["Bag Type"]}</td>
             <td width="250px">${student["From Office Name"]}</td>
             
-            <td width="270px" id="rightAlign">${student["To Office Name"]}</td>
+            <td width="270px" class="rightAlign">${student["To Office Name"]}</td>
         `;
+    if (student["To Office Name"] === "Nellore ICH") {
+      tr.querySelector(".rightAlign").style.textAlign = "center";
+    }
 
     tbody.appendChild(tr);
   });
@@ -30,15 +33,23 @@ function countBags(students) {
   let om = 0;
   let mp = 0;
   let tb = 0;
+  let ib = 0;
+  let ie = 0;
+  let ip = 0;
 
   students.forEach((student) => {
     if (student["Bag Type"] === "SP") {
       sp++;
-    } else if (student["Bag Type"] === "PL") {
+    } else if (
+      student["Bag Type"] === "PL" ||
+      student["Bag Type"] === "IB" ||
+      student["Bag Type"] === "IE" ||
+      student["Bag Type"] === "IP"
+    ) {
       pl++;
     } else if (student["Bag Type"] === "OM") {
       om++;
-    } else if (student["Bag Type"] === "MP") {
+    } else if (student["Bag Type"] === "MP" || student["Bag Type"] === "UT") {
       mp++;
     } else if (student["Bag Type"] === "Transit") {
       tb++;
@@ -175,9 +186,50 @@ async function getV10IN() {
   const response = await fetch("http://localhost:3527/v10in");
   const data = await response.json();
   const students = [...data];
-  students.sort((a, b) =>
-    a["To Office Name"].localeCompare(b["To Office Name"]),
-  );
+  renderStudents(students);
+}
+
+async function getGuntur() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Guntur TMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/guntur");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getOngole() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Ongole TMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/ongole");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getNellore() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Nellore TMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/nellore");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getVijayawada() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Vijayawada TMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/vijayawada");
+  const data = await response.json();
+  const students = [...data];
   renderStudents(students);
 }
 
