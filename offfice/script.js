@@ -1,12 +1,10 @@
 const newDate = new Date();
 
-function displayTable(students) {
+function displayTable(students, mlname) {
   const tbody = document.getElementById("tbody");
 
   tbody.innerHTML = "";
-  students.sort((a, b) =>
-    a["To Office Name"].localeCompare(b["To Office Name"]),
-  );
+  students.sort((a, b) => a["To Office Name"].localeCompare(b["To Office Name"]));
 
   students.forEach((student, index) => {
     const tr = document.createElement("tr");
@@ -19,7 +17,9 @@ function displayTable(students) {
             
             <td width="270px" class="rightAlign">${student["To Office Name"]}</td>
         `;
-    if (student["To Office Name"] === "Nellore ICH") {
+    // prettier-ignore
+    if (mlname === "nellore"||mlname === "chennai"||mlname === "guntur"||mlname === "ongole"||mlname === "vijayawada"||mlname === "kadapa"||mlname === "kurnool"||mlname === "ananthapur"||mlname === "hyderabad"||mlname === "tirupati") {
+      // alert("Nellore");
       tr.querySelector(".rightAlign").style.textAlign = "center";
     }
 
@@ -28,24 +28,13 @@ function displayTable(students) {
 }
 
 function countBags(students) {
-  let sp = 0;
-  let pl = 0;
-  let om = 0;
-  let mp = 0;
-  let tb = 0;
-  let ib = 0;
-  let ie = 0;
-  let ip = 0;
+  // prettier-ignore
+  let sp = 0, pl = 0, om = 0, mp = 0, tb = 0, ib = 0, ie = 0, ip = 0;
 
   students.forEach((student) => {
     if (student["Bag Type"] === "SP") {
       sp++;
-    } else if (
-      student["Bag Type"] === "PL" ||
-      student["Bag Type"] === "IB" ||
-      student["Bag Type"] === "IE" ||
-      student["Bag Type"] === "IP"
-    ) {
+    } else if (student["Bag Type"] === "PL" || student["Bag Type"] === "IB" || student["Bag Type"] === "IE" || student["Bag Type"] === "IP") {
       pl++;
     } else if (student["Bag Type"] === "OM") {
       om++;
@@ -57,14 +46,8 @@ function countBags(students) {
   });
 
   total = sp + pl + om + mp + tb;
-  return {
-    sp,
-    pl,
-    om,
-    mp,
-    tb,
-    total,
-  };
+  // prettier-ignore
+  return {sp,pl,om,mp,tb,total,ib,ie,ip};
 }
 
 function updateCounters(counts) {
@@ -73,18 +56,17 @@ function updateCounters(counts) {
   let usualbagCount, unusualbagCount, totalCount;
   usualbagCount = unusualbagCount = totalCount = 0;
 
-  document.getElementById("spBags").innerHTML =
-    `Speed Bags : ${counts.sp.toString().padStart(2, 0)}`;
-  document.getElementById("plBags").innerHTML =
-    `Parcel Bags : ${counts.pl.toString().padStart(2, 0)}`;
-  document.getElementById("omBags").innerHTML =
-    `Letter Bags : ${counts.om.toString().padStart(2, 0)}`;
-  document.getElementById("mpBags").innerHTML =
-    `Magazine Bags : ${counts.mp.toString().padStart(2, 0)}`;
-  document.getElementById("tbBags").innerHTML =
-    `Transit Bags : ${counts.tb.toString().padStart(2, 0)}`;
-  document.getElementById("totalBags").innerHTML =
-    `**Total Bags : ${counts.total.toString().padStart(2, 0)}`;
+  /*if (counts.sp === 0) document.getElementById("spBags").style.display = "none";
+  if (counts.pl === 0) document.getElementById("plBags").style.display = "none";
+  if (counts.om === 0) document.getElementById("omBags").style.display = "none";
+  if (counts.mp === 0) document.getElementById("mpBags").style.display = "none";*/
+
+  document.getElementById("spBags").innerHTML = `Speed Bags : ${counts.sp.toString().padStart(2, 0)}`;
+  document.getElementById("plBags").innerHTML = `Parcel Bags : ${counts.pl.toString().padStart(2, 0)}`;
+  document.getElementById("omBags").innerHTML = `Letter Bags : ${counts.om.toString().padStart(2, 0)}`;
+  document.getElementById("mpBags").innerHTML = `Magazine Bags : ${counts.mp.toString().padStart(2, 0)}`;
+  document.getElementById("tbBags").innerHTML = `Transit Bags : ${counts.tb.toString().padStart(2, 0)}`;
+  document.getElementById("totalBags").innerHTML = `**Total Bags : ${counts.total.toString().padStart(2, 0)}`;
 
   usualbagCount = counts.sp + counts.om + counts.tb;
   unusualbagCount = counts.mp + counts.pl;
@@ -95,8 +77,8 @@ function updateCounters(counts) {
   document.getElementById("total").textContent = totalCount;
 }
 
-function renderStudents(students) {
-  displayTable(students);
+function renderStudents(students, mlname) {
+  displayTable(students, mlname);
 
   const counts = countBags(students);
   updateCounters(counts);
@@ -175,7 +157,7 @@ async function getChennai() {
   const response = await fetch("http://localhost:3527/chennai");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "chennai");
 }
 
 async function getChennaiSide() {
@@ -208,7 +190,7 @@ async function getGuntur() {
   const response = await fetch("http://localhost:3527/guntur");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "guntur");
 }
 
 async function getOngole() {
@@ -219,18 +201,19 @@ async function getOngole() {
   const response = await fetch("http://localhost:3527/ongole");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "ongole");
 }
 
 async function getNellore() {
   const maillist = document.getElementById("maillist");
   maillist.innerHTML = `Maillist To : Nellore TMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
   maillist.style.textDecoration = "underline";
+  const mlname = "nellore";
 
   const response = await fetch("http://localhost:3527/nellore");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, mlname);
 }
 
 async function getVijayawada() {
@@ -241,7 +224,7 @@ async function getVijayawada() {
   const response = await fetch("http://localhost:3527/vijayawada");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "vijayawada");
 }
 
 async function getKadapa() {
@@ -252,7 +235,7 @@ async function getKadapa() {
   const response = await fetch("http://localhost:3527/kadapa");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "kadapa");
 }
 
 async function getKurnool() {
@@ -263,7 +246,7 @@ async function getKurnool() {
   const response = await fetch("http://localhost:3527/kurnool");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "kurnool");
 }
 
 async function getAnanthapur() {
@@ -274,7 +257,7 @@ async function getAnanthapur() {
   const response = await fetch("http://localhost:3527/ananthapur");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "ananthapur");
 }
 
 async function getHyderabad() {
@@ -285,7 +268,7 @@ async function getHyderabad() {
   const response = await fetch("http://localhost:3527/hyd");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "hyderabad");
 }
 
 async function getAg27in() {
@@ -318,7 +301,7 @@ async function getTirupatiNDC() {
   const response = await fetch("http://localhost:3527/ndc");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "tirupati");
 }
 
 async function getTirupatiIDC() {
@@ -329,7 +312,7 @@ async function getTirupatiIDC() {
   const response = await fetch("http://localhost:3527/idc");
   const data = await response.json();
   const students = [...data];
-  renderStudents(students);
+  renderStudents(students, "tirupati");
 }
 
 async function excelExport() {
@@ -358,9 +341,7 @@ async function generateMaillist() {
   const response = await fetch("http://localhost:3527/printmaillist");
   const data = await response.json();
   const students = [...data];
-  students.sort((a, b) =>
-    a["To Office Name"].localeCompare(b["To Office Name"]),
-  );
+  students.sort((a, b) => a["To Office Name"].localeCompare(b["To Office Name"]));
   renderStudents(students);
   checkDiscrepancy(students);
 }
@@ -401,111 +382,13 @@ async function deleteBagClick() {
 async function checkDiscrepancy(students) {
   alert("Function working");
   console.log(students);
+  // prettier-ignore
+  const firstline = ["Baireddipalle S.O","Bangarupalem S.O","Beerangi Kothakota S.O","Burakayalakota S.O","Chembakur S.O","Cherlopalle S.O","Chinnatippasamudram S.O","Chintaparthi S.O","Chowdepalle S.O","Dravidian University S.O","Gurramkonda S.O","Kalikiri S.O","Kolamasanapalle S.O","Kuppam S.O","Kurabalakota S.O","Madanapalle Bazar S.O","Madanapalle H.O","Mahal S.O Chittoor","Medikurthi S.O","Mogili Venkatagiri S.O","Mulakalacheruvu R.S. S.O","Nimmanapalle S.O","Palamaner S.O","Peddatippasamudram S.O","Punganur S.O","Rallabudugur S.O","Ramakuppam S.O","Rishivalley S.O","Royalpet S.O","Sodam S.O","Tarigonda S.O","Thamballapalle S.O","Vayalpad S.O","Venkatagirikota S.O"];
+  // prettier-ignore
+  const seconline = ["Akkurthi S.O","AVILALA SO","Bhakarapet S.O","Buchinaidu Kandriga S.O","Chandragiri H.O","Chinnagottigallu S.O","Damalacheruvu S.O","Ekambarakuppam S.O","Gyarampalle kothapalle S.O","Kalakada S.O","Kallur S.O Chittoor","Karvetinagar S.O","Kattakindavenkatapuram S.O","Kovanur S.O","Mangalam S.O","Mangalampet S.O","Nagalapuram S.O Chittoor","Nagari S.O","Narasingapuram S.O Chittoor","Narayanavaram S.O","Nindra S.O","Pachikapallam S.O","Pakala S.O","Pallam S.O","Panagal S.O","Pannur S.O Chittoor","Papanaidupet S.O","Peddakannali S.O","Perumallapalle S.O","Piler S.O","Pissatur S.O","Puttur S.O","Renigunta S.O","Rompicherla S.O Chittoor","Satyavedu S.O","Settipalli S.O","Sri Bommarajapuram S.O","Sricity S.E.Z SO","Srikalahasti H.O","Thondamanadu S.O","Tiruchanoor S.O","Tirumala S.O Chittoor","Vadamalpet S.O","Varadaiahpalem S.O","Vepagunta S.O Chittoor","Yerpedu S.O"];
+  // prettier-ignore
+  const chittor = ["Arugonda S.O","Chittoor H.O","Chittoor North S.O","Ctr Collectorate S.O","Gangadhara Nellore S.O","Iral S.O","Iruvaram S.O","Kanipakam S.O","Kothapalle S.O","Murukambattu S.O","Nangamangalam S.O","Narasingarayanipettah S.O","Penumur S.O","Puthalapattu S.O","Ramapuram S.O (Chittoor)","Thugundram S.O","Vengalrajukuppam S.O","Yadamari S.O"];
 
-  const firstline = [
-    "Baireddipalle S.O",
-    "Bangarupalem S.O",
-    "Beerangi Kothakota S.O",
-    "Burakayalakota S.O",
-    "Chembakur S.O",
-    "Cherlopalle S.O",
-    "Chinnatippasamudram S.O",
-    "Chintaparthi S.O",
-    "Chowdepalle S.O",
-    "Dravidian University S.O",
-    "Gurramkonda S.O",
-    "Kalikiri S.O",
-    "Kolamasanapalle S.O",
-    "Kuppam S.O",
-    "Kurabalakota S.O",
-    "Madanapalle Bazar S.O",
-    "Madanapalle H.O",
-    "Mahal S.O Chittoor",
-    "Medikurthi S.O",
-    "Mogili Venkatagiri S.O",
-    "Mulakalacheruvu R.S. S.O",
-    "Nimmanapalle S.O",
-    "Palamaner S.O",
-    "Peddatippasamudram S.O",
-    "Punganur S.O",
-    "Rallabudugur S.O",
-    "Ramakuppam S.O",
-    "Rishivalley S.O",
-    "Royalpet S.O",
-    "Sodam S.O",
-    "Tarigonda S.O",
-    "Thamballapalle S.O",
-    "Vayalpad S.O",
-    "Venkatagirikota S.O",
-  ];
-  const seconline = [
-    "Akkurthi S.O",
-    "AVILALA SO",
-    "Bhakarapet S.O",
-    "Buchinaidu Kandriga S.O",
-    "Chandragiri H.O",
-    "Chinnagottigallu S.O",
-    "Damalacheruvu S.O",
-    "Ekambarakuppam S.O",
-    "Gyarampalle kothapalle S.O",
-    "Kalakada S.O",
-    "Kallur S.O Chittoor",
-    "Karvetinagar S.O",
-    "Kattakindavenkatapuram S.O",
-    "Kovanur S.O",
-    "Mangalam S.O",
-    "Mangalampet S.O",
-    "Nagalapuram S.O Chittoor",
-    "Nagari S.O",
-    "Narasingapuram S.O Chittoor",
-    "Narayanavaram S.O",
-    "Nindra S.O",
-    "Pachikapallam S.O",
-    "Pakala S.O",
-    "Pallam S.O",
-    "Panagal S.O",
-    "Pannur S.O Chittoor",
-    "Papanaidupet S.O",
-    "Peddakannali S.O",
-    "Perumallapalle S.O",
-    "Piler S.O",
-    "Pissatur S.O",
-    "Puttur S.O",
-    "Renigunta S.O",
-    "Rompicherla S.O Chittoor",
-    "Satyavedu S.O",
-    "Settipalli S.O",
-    "Sri Bommarajapuram S.O",
-    "Sricity S.E.Z SO",
-    "Srikalahasti H.O",
-    "Thondamanadu S.O",
-    "Tiruchanoor S.O",
-    "Tirumala S.O Chittoor",
-    "Vadamalpet S.O",
-    "Varadaiahpalem S.O",
-    "Vepagunta S.O Chittoor",
-    "Yerpedu S.O",
-  ];
-  const chittor = [
-    "Arugonda S.O",
-    "Chittoor H.O",
-    "Chittoor North S.O",
-    "Ctr Collectorate S.O",
-    "Gangadhara Nellore S.O",
-    "Iral S.O",
-    "Iruvaram S.O",
-    "Kanipakam S.O",
-    "Kothapalle S.O",
-    "Murukambattu S.O",
-    "Nangamangalam S.O",
-    "Narasingarayanipettah S.O",
-    "Penumur S.O",
-    "Puthalapattu S.O",
-    "Ramapuram S.O (Chittoor)",
-    "Thugundram S.O",
-    "Vengalrajukuppam S.O",
-    "Yadamari S.O",
-  ];
   const filteredResults = await students.filter((record) => {
     if ("Sodam S.O".includes(record["To Office Name"])) {
       alert(record["Bag Number"]);

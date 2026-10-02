@@ -45,8 +45,7 @@ app.get("/allbags", async (req, res) => {
 });
 app.get("/chennai", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Chennai PH','Park Town Sorting Chennai  L1U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Chennai PH','Park Town Sorting Chennai  L1U')";
     db.query(sql, (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -105,8 +104,7 @@ app.get("/v10in", async (req, res) => {
 });
 app.get("/nellore", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Nellore ICH','Nellore PH','Nellore RMS  L2U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Nellore ICH','Nellore PH','Nellore RMS  L2U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -126,8 +124,7 @@ app.get("/nellore", async (req, res) => {
 
 app.get("/guntur", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Guntur ICH','Guntur PH','Guntur RMS  L2U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Guntur ICH','Guntur PH','Guntur RMS  L2U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -147,8 +144,7 @@ app.get("/guntur", async (req, res) => {
 
 app.get("/ongole", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Ongole ICH','Ongole PH','Ongole RMS  L2U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Ongole ICH','Ongole PH','Ongole RMS  L2U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -168,8 +164,7 @@ app.get("/ongole", async (req, res) => {
 
 app.get("/vijayawada", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Vijayawada NSH','Vijayawada PH','Vijayawada Sub foreign Post office','Vijayawada RMS  L1U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Vijayawada NSH','Vijayawada PH','Vijayawada Sub foreign Post office','Vijayawada RMS  L1U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -189,8 +184,7 @@ app.get("/vijayawada", async (req, res) => {
 
 app.get("/kadapa", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Cuddapah ICH','Cuddapah PH','Cuddapah RMS  L2U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Cuddapah ICH','Cuddapah PH','Cuddapah RMS  L2U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -210,8 +204,7 @@ app.get("/kadapa", async (req, res) => {
 
 app.get("/kurnool", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Kurnool ICH','Kurnool PH','Kurnool RMS  L2U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Kurnool ICH','Kurnool PH','Kurnool RMS  L2U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -231,8 +224,7 @@ app.get("/kurnool", async (req, res) => {
 
 app.get("/ananthapur", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Ananthapur ICH','Ananthapur PH','Ananthapur RMS  L2U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Ananthapur ICH','Ananthapur PH','Ananthapur RMS  L2U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -252,8 +244,7 @@ app.get("/ananthapur", async (req, res) => {
 
 app.get("/hyd", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Hyderabad NSH','Hyderabad PH','Hyderabad Stg L1U')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Hyderabad NSH','Hyderabad PH','Hyderabad Stg L1U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -316,8 +307,7 @@ app.get("/y32in", async (req, res) => {
 
 app.get("/ndc", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Nodal Delivery Center Tirupati')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('Nodal Delivery Center Tirupati')";
 
     db.query(sql, async (err, result) => {
       if (err) {
@@ -338,8 +328,7 @@ app.get("/ndc", async (req, res) => {
 
 app.get("/idc", async (req, res) => {
   try {
-    const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('IDC TIRUPATI','Tirupati H.O')";
+    const sql = "SELECT * FROM PARCEL WHERE `To Office Name` IN('IDC TIRUPATI','Tirupati H.O')";
 
     db.query(sql, async (err, result) => {
       if (err) {
