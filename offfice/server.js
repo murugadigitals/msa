@@ -43,10 +43,30 @@ app.get("/allbags", async (req, res) => {
     });
   }
 });
+app.get("/chennai", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Chennai PH','Park Town Sorting Chennai  L1U')";
+    db.query(sql, (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
 app.get("/chennaiside", async (req, res) => {
   try {
     const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Chennai PH','Arsikere PH','Bengaluru Parcel Hub','Coimbatore PH','Kochi PH','Kozhikode PH','Madurai PH','Mangaluru PH','Mysuru PH','Salem PH','Thiruvananthapuram PH','Thrissur PH','Trichy PH')";
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Arsikere PH','Bengaluru Parcel Hub','Coimbatore PH','Kochi PH','Kozhikode PH','Madurai PH','Mangaluru PH','Mysuru PH','Salem PH','Thiruvananthapuram PH','Thrissur PH','Trichy PH')";
     db.query(sql, (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
@@ -166,29 +186,212 @@ app.get("/vijayawada", async (req, res) => {
     });
   }
 });
-app.get("/chittor", async (req, res) => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
 
+app.get("/kadapa", async (req, res) => {
   try {
     const sql =
-      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Iral S.O','Iruvaram S.O','Arugonda S.O','Puthapapattu S.O','Chittoorr North','Vengalrajukuppam S.O','Kothapalle S.O','Murukambattu S.O','Chittoor H.O','Ctr Collectorate S.O','Penumur S.O','Ramapuram S.O (Chittoor)','Gangadhara Nellore S.O','Yadamari S.O','Thugundram S.O','Kanipakam S.O')";
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Cuddapah ICH','Cuddapah PH','Cuddapah RMS  L2U')";
     db.query(sql, async (err, result) => {
       if (err) {
         console.error("Error while geeting data from database");
-        return res.status(500).json({
+        res.status(500).json({
           message: "Error, while receiving data from server",
         });
       }
       res.json(result);
     });
   } catch (err) {
-    // console.error(err);
-    return res.status(500).json({
+    console.error(err);
+    res.status(500).json({
       error: "Internal Server Error",
     });
   }
 });
+
+app.get("/kurnool", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Kurnool ICH','Kurnool PH','Kurnool RMS  L2U')";
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/ananthapur", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Ananthapur ICH','Ananthapur PH','Ananthapur RMS  L2U')";
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/hyd", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Hyderabad NSH','Hyderabad PH','Hyderabad Stg L1U')";
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+app.get("/ag27in", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Ahmedabad PH','Belagavi PH','Chhatrapati Sambhaji Nagar PH','Hubballi PH','Kalaburgi PH','MARGAON PH','Mumbai PH','Pune PH','Rajkot PH','Surat PH','Vadodara PH')";
+
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/y32in", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Raipur PH','Integrated Parcel Hub AMPC','Ambala PH','Gurgaon PH','Bhopal PH','Jabalpur PH','Chandigarh PH','Jaipur PH','Ajmer PH','JODHPUR PH','Agra PH','Prayagraj PH','Bareilly PH','Gorakhpur PH','Ghaziabad PH','Lucknow PH','Dehradun PH','Gwalior PH','Indore PH','Jalandhar PH','Kanpur PH','Ludhiana PH','Nagpur PH','Rohtak PH','Srinagar PH','Varanasi PH')";
+
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/ndc", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('Nodal Delivery Center Tirupati')";
+
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/idc", async (req, res) => {
+  try {
+    const sql =
+      "SELECT * FROM PARCEL WHERE `To Office Name` IN('IDC TIRUPATI','Tirupati H.O')";
+
+    db.query(sql, async (err, result) => {
+      if (err) {
+        console.error("Error while geeting data from database");
+        res.status(500).json({
+          message: "Error, while receiving data from server",
+        });
+      }
+      res.json(result);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Internal Server Error",
+    });
+  }
+});
+
+app.get("/excelexport", async (req, res) => {
+  db.query("CALL parcel()", (err, result) => {
+    if (err) {
+      console.log("Procedure error:", err);
+      return;
+    }
+
+    console.log(result[0]);
+  });
+});
+
+// app.get("/chittor", async (req, res) => {
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+
+//   try {
+//     const sql =
+//       "SELECT * FROM PARCEL WHERE `To Office Name` IN('Iral S.O','Iruvaram S.O','Arugonda S.O','Puthapapattu S.O','Chittoorr North','Vengalrajukuppam S.O','Kothapalle S.O','Murukambattu S.O','Chittoor H.O','Ctr Collectorate S.O','Penumur S.O','Ramapuram S.O (Chittoor)','Gangadhara Nellore S.O','Yadamari S.O','Thugundram S.O','Kanipakam S.O')";
+//     db.query(sql, async (err, result) => {
+//       if (err) {
+//         console.error("Error while geeting data from database");
+//         return res.status(500).json({
+//           message: "Error, while receiving data from server",
+//         });
+//       }
+//       res.json(result);
+//     });
+//   } catch (err) {
+//     // console.error(err);
+//     return res.status(500).json({
+//       error: "Internal Server Error",
+//     });
+//   }
+// });
 
 app.post("/filterRecords", async (req, res) => {
   //   console.log(req.body);

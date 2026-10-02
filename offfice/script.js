@@ -167,6 +167,17 @@ async function getBagsTMO1() {
   renderStudents(students);
 }
 
+async function getChennai() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Chennai Central TMO &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/chennai");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
 async function getChennaiSide() {
   const maillist = document.getElementById("maillist");
   maillist.innerHTML = `Maillist To : Chennai Central TMO &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
@@ -231,6 +242,100 @@ async function getVijayawada() {
   const data = await response.json();
   const students = [...data];
   renderStudents(students);
+}
+
+async function getKadapa() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Cuddapah TMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/kadapa");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getKurnool() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Kurnool TMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/kurnool");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getAnanthapur() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Ananthapur TMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/ananthapur");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getHyderabad() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Hyderabad Dec RSTMO  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/hyd");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getAg27in() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : AG - 27 - IN  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/ag27in");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getY32in() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Y - 32 - IN  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/y32in");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getTirupatiNDC() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Tirupati NDC  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/ndc");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function getTirupatiIDC() {
+  const maillist = document.getElementById("maillist");
+  maillist.innerHTML = `Maillist To : Tirupati IDC  &nbsp;&nbsp;  SET : 2B &nbsp;&nbsp;  Dated : ${newDate.toLocaleDateString()}`;
+  maillist.style.textDecoration = "underline";
+
+  const response = await fetch("http://localhost:3527/idc");
+  const data = await response.json();
+  const students = [...data];
+  renderStudents(students);
+}
+
+async function excelExport() {
+  const response = await fetch(`http://localhost:3527/excelexport`);
+  const data = await response.json();
+  console.log(data);
 }
 
 async function getChittor() {
