@@ -1,5 +1,7 @@
 const newDate = new Date();
 
+document.getElementById("rightTxt").style.textAlign = "right";
+
 function displayTable(students, mlname) {
   const tbody = document.getElementById("tbody");
 
@@ -25,6 +27,18 @@ function displayTable(students, mlname) {
 
     tbody.appendChild(tr);
   });
+  /*document.getElementById("leftTxt").innerHTML =
+    // `<h4><span style="text-decoration:underline">Note: All Bags were dealt in IT 2.0 Olny.</span></h4> <br>Report Printed On : ${newDate.toLocaleDateString()}</h4>`;
+    `
+      <p><span class="text-decoration-underline fs-5">Note: All Bags were detalt in IT 2.0 Only </span><br><span class="fs-5"> Report Printed On : ${newDate.toLocaleDateString()}</span></p>
+    `;
+
+  document.getElementById("rightTxt").innerHTML = `<h4><span class="bi bi-whatsapp"></span>&nbsp;+91 7396128940
+                <br><span class="bi bi-telephone"></span>&nbsp;&nbsp;+91 8121963271
+                <br><span class="bi bi-envelope-at"></span>&nbsp;msharipdtr@gmail.com
+                
+                <h4>`;
+  document.getElementById("rightTxt").style.textAlign = "right";*/
 }
 
 function countBags(students) {
