@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="uname" placeholder="Enter your name">
+        <button onclick="saveName()">Save</button>
+        <button onclick="removeItem()">Remove</button>
+        <P id="desi"></P>
+    </div>
+    <script>
+        function saveName() {
+            // const name = document.getElementById("uname").value
+            // localStorage.setItem("color", name)
+
+            localStorage.setItem("name", "Sri Hari");
+            localStorage.setItem("office", "Tirupati RMS");
+            localStorage.setItem("designation", "Sorting Assistant");
+
+            // const result = localStorage.getItem("designation")
+            // document.getElementById("desi").textContent = result
+        }
+        function removeItem() {
+            // localStorage.removeItem("color")
+            // localStorage.clear()
+            console.log(localStorage.length);
+
+        }
+        // const employees = [
+        //     "Sri Hari",
+        //     "Ravi",
+        //     "Suresh",
+        //     "Sasi Rekha Idupulapati"
+        // ];
+        // const emp = JSON.stringify(employees)
+        // localStorage.setItem("emp", emp)
+
+        const result = localStorage.getItem("emp")
+        console.log(typeof (result));
+
+        const data = JSON.parse(result)
+        console.log(typeof (data))
+        console.log(data)
+    </script>
+
+
+</body>
+
+</html>

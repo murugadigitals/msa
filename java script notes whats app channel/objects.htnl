@@ -1,0 +1,661 @@
+*💻 JavaScript Roadmap 2026 — Part 7*
+
+*🟢 Objects in JavaScript*
+
+Arrays are useful when you have a collection of values.
+
+But what if you want to represent something with properties and related information?
+
+For example, a customer has:
+
+- Name
+- Age
+- Email
+- City
+
+An object is perfect for this.
+
+*1️⃣ Creating an Object*
+
+An object is created using curly braces "{}".
+const person = {
+    name: "Rahul",
+    age: 25,
+    city: "Pune"
+};
+
+Here:
+
+name → "Rahul"
+age → 25
+city → "Pune"
+
+These are called properties.
+
+Think of an object as a collection of related information.
+
+*2️⃣ Accessing Properties*
+
+There are two common ways.
+
+Dot notation
+console.log(person.name);
+Output:
+Rahul
+Bracket notation
+console.log(person["age"]);
+
+Output:
+25
+
+Both access the same object.
+
+*3️⃣ Dot Notation vs Bracket Notation*
+
+Dot notation:
+person.name
+is convenient when you know the property name.
+
+Bracket notation becomes especially useful when the property name is stored in a variable.
+const property = "name";
+
+console.log(person[property]);
+
+Output:
+Rahul
+
+This would not work the same way:
+person.property
+because JavaScript would look for a property literally named ""property"".
+
+*4️⃣ Adding Properties*
+
+You can add a new property to an existing object.
+
+const person = {
+    name: "Rahul",
+    age: 25
+};
+
+person.city = "Pune";
+
+console.log(person);
+Now the object contains:
+
+name → Rahul
+age → 25
+city → Pune
+
+*5️⃣ Updating Properties*
+
+You can change an existing property.
+person.age = 26;
+
+console.log(person.age);
+
+Output:
+26
+
+This is possible even when the object itself was declared using "const".
+
+Remember:
+const person = {};
+prevents reassignment of "person", but the object's properties can still be modified.
+
+*6️⃣ Deleting Properties*
+
+Use the "delete" operator.
+delete person.city;
+Now "city" no longer exists on the object.
+
+Use this carefully in real applications because changing object structure unnecessarily can have performance and maintainability implications.
+
+*🔹 Objects Can Store Different Data Types*
+
+*7️⃣ Strings, Numbers and Booleans*
+const user = {
+    name: "Rahul",
+    age: 25,
+    isActive: true
+};
+
+Objects can also contain arrays:
+const user = {
+    name: "Rahul",
+    skills: ["SQL", "Python", "JavaScript"]
+};
+
+And even other objects:
+const user = {
+    name: "Rahul",
+    address: {
+        city: "Pune",
+        country: "India"
+    }
+};
+
+This is called a nested object.
+
+*8️⃣ Accessing Nested Objects*
+
+Given:
+const user = {
+    name: "Rahul",
+    address: {
+        city: "Pune",
+        country: "India"
+    }
+};
+
+You can access the city using:
+console.log(user.address.city);
+
+Output:
+Pune
+
+Or:
+console.log(user["address"]["city"]);
+
+*🔹 Object Methods*
+
+*9️⃣ Functions Inside Objects*
+
+A function stored inside an object is commonly called a method.
+
+const person = {
+    name: "Rahul",
+
+    greet() {
+        console.log("Hello!");
+    }
+};
+
+Call it using:
+person.greet();
+
+Output:
+Hello!
+
+Methods are useful when an object contains both data and behavior.
+
+*🔟 Using "this"*
+
+Inside an object method, "this" can refer to the object that the method is called on.
+
+const person = {
+    name: "Rahul",
+
+    greet() {
+        console.log("Hello " + this.name);
+    }
+};
+
+person.greet();
+
+Output:
+Hello Rahul
+
+Here:
+this.name
+refers to the "name" property of the object used to call the method.
+
+Understanding "this" deeply will become important later.
+
+*🔹 Object Shorthand*
+
+*1️⃣1️⃣ Property Shorthand*
+
+Suppose you already have variables:
+const name = "Rahul";
+const age = 25;
+Instead of:
+const person = {
+    name: name,
+    age: age
+};
+
+Modern JavaScript lets you write:
+const person = {
+    name,
+    age
+};
+
+JavaScript understands that:
+name: name
+age: age
+can be shortened to:
+name
+age
+
+*🔹 Computed Properties*
+
+*1️⃣2️⃣ Dynamic Property Names*
+
+You can use an expression inside square brackets when creating an object.
+const property = "name";
+
+const person = {
+    [property]: "Rahul"
+};
+
+console.log(person.name);
+
+Output:
+Rahul
+
+This becomes useful when object property names are determined dynamically.
+
+*🔹 Object Destructuring*
+
+*1️⃣3️⃣ What Is Destructuring?*
+
+Destructuring allows you to extract values from an object into variables.
+
+Given:
+const person = {
+    name: "Rahul",
+    age: 25,
+    city: "Pune"
+};
+
+You can write:
+const { name, age } = person;
+
+console.log(name);
+console.log(age);
+
+Output:
+Rahul
+25
+
+Instead of repeatedly writing:
+person.name
+person.age
+you now have variables:
+name
+age
+
+*1️⃣4️⃣ Renaming During Destructuring*
+
+You can give the extracted value a different variable name.
+
+const person = {
+    name: "Rahul",
+    age: 25
+};
+
+const { name: userName } = person;
+
+console.log(userName);
+
+Output:
+Rahul
+
+The syntax:
+name: userName
+means:
+
+Take the name property → store it in userName
+
+*1️⃣5️⃣ Default Values in Destructuring*
+
+If a property doesn't exist, you can provide a default.
+const person = {
+    name: "Rahul"
+};
+
+const { name, city = "Pune" } = person;
+
+console.log(city);
+
+Output:
+Pune
+
+*🔹 Spread Syntax*
+
+*1️⃣6️⃣ Copying Object Properties*
+
+The spread operator "..." can copy properties into another object.
+const person = {
+    name: "Rahul",
+    age: 25
+};
+
+const updatedPerson = {
+   ...person,
+    city: "Pune"
+};
+
+Now:
+console.log(updatedPerson);
+contains:
+
+name → Rahul
+age → 25
+city → Pune
+
+This pattern is very common in modern JavaScript applications.
+
+*1️⃣7️⃣ Updating an Object Using Spread*
+
+Suppose:
+const user = {
+    name: "Rahul",
+    age: 25
+};
+
+You want a new object with a different age.
+const updatedUser = {
+   ...user,
+    age: 26
+};
+
+Now:
+user.age → 25
+updatedUser.age → 26
+The original object hasn't been modified.
+
+This is an important pattern when working with immutable state.
+
+*🔹 Object Utility Methods*
+
+*1️⃣8️⃣ "Object.keys()"*
+
+Returns an array containing an object's property names.
+
+const person = {
+    name: "Rahul",
+    age: 25,
+    city: "Pune"
+};
+
+console.log(Object.keys(person));
+Output:
+["name", "age", "city"]
+
+*1️⃣9️⃣ "Object.values()"*
+
+Returns an array containing the values.
+console.log(Object.values(person));
+Output:
+["Rahul", 25, "Pune"]
+
+*2️⃣0️⃣ "Object.entries()"*
+
+Returns key-value pairs.
+console.log(Object.entries(person));
+Output:
+[
+    ["name", "Rahul"],
+    ["age", 25],
+    ["city", "Pune"]
+]
+
+This is particularly useful when you need to iterate through an object's properties.
+
+*🔄 Iterating Through Objects*
+
+*2️⃣1️⃣ Using "for...in"*
+const person = {
+    name: "Rahul",
+    age: 25,
+    city: "Pune"
+};
+
+for (const key in person) {
+    console.log(key, person[key]);
+}
+
+Output:
+name Rahul
+age 25
+city Pune
+
+*2️⃣2️⃣ Using "Object.entries()"*
+
+Another modern approach:
+for (const [key, value] of Object.entries(person)) {
+    console.log(key, value);
+}
+
+This uses array destructuring to separate each key-value pair.
+
+*⭐ Objects and Arrays Together*
+
+Real applications rarely use objects and arrays separately.
+
+Usually, you'll work with an array of objects.
+
+For example:
+const employees = [
+    {
+        name: "Amit",
+        salary: 50000
+    },
+    {
+        name: "Priya",
+        salary: 70000
+    },
+    {
+        name: "Rahul",
+        salary: 45000
+    }
+];
+
+Now you can combine what you learned in Part 6.
+
+*Get employee names*
+const names = employees.map(employee => employee.name);
+
+console.log(names);
+
+Output:
+["Amit", "Priya", "Rahul"]
+
+
+*Find high earners*
+const highEarners = employees.filter(
+    employee => employee.salary > 50000
+);
+
+*Find one employee*
+const employee = employees.find(
+    employee => employee.name === "Priya"
+);
+
+This combination of arrays + objects is fundamental to working with API responses and application data.
+
+*⭐ Optional Chaining with Objects*
+
+Suppose an API gives you:
+const user = {
+    profile: {
+        address: {
+            city: "Pune"
+        }
+    }
+};
+
+You can access:
+console.log(user.profile.address.city);
+But what if "address" doesn't exist?
+
+Optional chaining helps:
+console.log(user.profile?.address?.city);
+
+If the property doesn't exist, JavaScript returns:
+undefined
+instead of throwing an error at that point in the chain.
+
+This is extremely useful when working with external API data.
+
+*⭐ Object References*
+
+This is an important concept.
+
+Consider:
+const user1 = {
+    name: "Rahul"
+};
+
+const user2 = user1;
+
+user2.name = "Amit";
+
+console.log(user1.name);
+
+What do you think it prints?
+Amit
+
+Why?
+
+"user2" doesn't contain an independent copy of the object.
+
+Both variables refer to the same object.
+
+Conceptually:
+user1 ─────┐
+           ↓
+        { name: "Amit" }
+           ↑
+user2 ─────┘
+
+Understanding object references is essential before learning advanced JavaScript.
+
+*🧠 Real-World Example*
+
+Imagine an application storing customer information:
+const customer = {
+    id: 101,
+    name: "Amit",
+    email: "amit@example.com",
+
+    address: {
+        city: "Pune",
+        country: "India"
+    },
+
+    orders: [
+        {
+            product: "Laptop",
+            amount: 60000
+        },
+        {
+            product: "Mouse",
+            amount: 1000
+        }
+    ]
+};
+
+You can access:
+customer.name
+
+customer.address.city
+
+customer.orders[0].product
+
+This structure resembles the nested data you commonly encounter in real applications and APIs.
+
+*⚠️ Common Beginner Mistakes*
+
+Mistake 1: Confusing dot and bracket notation
+
+Correct:
+person.name
+Correct:
+person["name"]
+But if the property name is stored in a variable:
+const key = "name";
+
+person[key]
+is what you want.
+
+Mistake 2: Assuming "const" makes objects immutable
+
+This is valid:
+const user = {
+    name: "Rahul"
+};
+
+user.name = "Amit";
+"const" prevents reassignment of the variable, not modification of the object's properties.
+
+Mistake 3: Confusing copying with referencing
+
+This:
+const user2 = user1;
+doesn't create an independent object.
+
+For a shallow copy:
+const user2 = {...user1 };
+But remember: spread only performs a shallow copy.
+
+Nested objects can still share references.
+
+*💻 Practice*
+
+*1️⃣ Create an Object*
+
+Create a "student" object containing:
+
+name
+age
+course
+city
+
+Print each property.
+
+*2️⃣ Modify a Property*
+
+Change the student's age.
+
+*3️⃣ Add a Property*
+
+Add:
+
+email
+
+to the object.
+
+*4️⃣ Destructuring*
+
+Extract "name" and "course" using object destructuring.
+
+*5️⃣ Nested Object*
+
+Create:
+const employee = {
+    name: "...",
+    department: {
+        name: "...",
+        location: "..."
+    }
+};
+
+Print the department location.
+
+*6️⃣ Array of Objects*
+
+Create an array of five employees.
+
+Use "filter()" to find employees whose salary is greater than "60000".
+
+*7️⃣ Challenge*
+
+Given:
+const products = [
+    { name: "Laptop", price: 60000 },
+    { name: "Phone", price: 30000 },
+    { name: "Tablet", price: 20000 },
+    { name: "Monitor", price: 15000 }
+];
+
+Try to:
+
+1. Get all product names.
+2. Find products costing more than 20000.
+3. Find the first product costing less than 18000.
+4. Calculate the total price of all products.
+5. Create a new array where every product has a 10% discount.
+
+*🚀 Double Tap ❤️ For More*

@@ -1,0 +1,384 @@
+*💻 JavaScript Roadmap 2026 — Part 8*
+
+*🟢 Strings & String Methods*
+
+Strings are used to represent text in JavaScript.
+
+Examples:
+const name = "Rahul";
+const city = "Pune";
+const message = "Welcome to JavaScript";
+
+Strings are used everywhere:
+- User names
+- Emails
+- Search queries
+- API responses
+- Messages
+- URLs
+- Form inputs
+- File names
+
+Understanding string manipulation is therefore essential.
+
+*1️⃣ Creating Strings*
+
+JavaScript provides three common ways to create strings.
+
+- Double quotes
+const name = "Rahul";
+- Single quotes
+const name = 'Rahul';
+- Template literals
+const name = `Rahul`;
+Template literals use backticks: ` `
+
+They become especially useful when inserting variables into strings.
+
+*2️⃣ String Length*
+
+Use ".length" to find the number of characters.
+
+const message = "JavaScript";
+console.log(message.length); // 10
+
+Spaces are also counted.
+
+const message = "Hello World";
+
+console.log(message.length); // 11 - space is included
+
+*3️⃣ Accessing Characters*
+
+Strings use zero-based indexing, just like arrays.
+
+const language = "JavaScript";
+console.log(language[0]); // J
+console.log(language[4]); // S
+console.log(language[language.length - 1]); // t - last character
+
+*4️⃣ Strings Are Immutable*
+
+Strings cannot be changed directly.
+
+const name = "Rahul";
+name[0] = "K"; // Does NOT work
+
+Instead, you create a new string:
+const name = "Rahul";
+const updatedName = "K" + name.slice(1);
+console.log(updatedName); // Kahul
+
+This concept of immutability is important when working with strings.
+
+*🔹 Changing Letter Case*
+
+*5️⃣ "toUpperCase()"*
+
+Converts a string to uppercase.
+
+const name = "rahul";
+console.log(name.toUpperCase()); // RAHUL
+
+*6️⃣ "toLowerCase()"*
+
+Converts a string to lowercase.
+const name = "RAHUL";
+console.log(name.toLowerCase()); // rahul
+
+A common real-world use:
+const userInput = "ADMIN";
+if (userInput.toLowerCase() === "admin") {
+console.log("Admin user");
+}
+
+*🔹 Removing Unwanted Spaces*
+
+*7️⃣ "trim()"*
+
+"trim()" removes whitespace from the beginning and end of a string.
+
+const name = " Rahul ";
+console.log(name.trim()); // Rahul
+
+This is extremely useful when processing form inputs.
+
+*8️⃣ "trimStart()"*
+
+Removes whitespace from the beginning.
+
+const text = " Hello";
+console.log(text.trimStart()); // "Hello"
+
+*9️⃣ "trimEnd()"*
+
+Removes whitespace from the end.
+
+const text = "Hello ";
+console.log(text.trimEnd()); // "Hello"
+
+*🔹 Searching Strings*
+
+*🔟 "includes()"*
+
+Checks whether a string contains specific text.
+
+const message = "Welcome to JavaScript";
+console.log(message.includes("JavaScript")); // true
+
+const email = "user@gmail.com";
+console.log(email.includes("@")); // true
+
+*1️⃣1️⃣ "startsWith()"*
+
+Checks whether a string starts with specific text.
+const url = "https://example.com";
+console.log(url.startsWith("https")); // true
+
+*1️⃣2️⃣ "endsWith()"*
+
+Checks whether a string ends with specific text.
+
+const fileName = "report.pdf";
+console.log(fileName.endsWith(".pdf")); // true
+
+*🔹 Finding Positions*
+
+*1️⃣3️⃣ "indexOf()"*
+
+Returns the position of the first occurrence.
+
+const message = "Hello JavaScript";
+console.log(message.indexOf("JavaScript")); // 6
+console.log(message.indexOf("Python")); // -1 - not found
+
+*1️⃣4️⃣ "lastIndexOf()"*
+
+Returns the position of the last occurrence.
+
+const text = "JavaScript is powerful. JavaScript is popular.";
+console.log(text.lastIndexOf("JavaScript")); // 25
+
+*🔹 Extracting Parts of a String*
+
+*1️⃣5️⃣ "slice()"*
+
+"slice()" extracts part of a string.
+
+const language = "JavaScript";
+console.log(language.slice(0, 4)); // Java
+
+The ending index is not included.
+- 0 → J
+- 1 → a
+- 2 → v
+- 3 → a
+- 4 → S
+- So `slice(0, 4)` returns characters from index 0 through 3.
+
+*1️⃣6️⃣ Negative Indexes*
+
+You can use negative indexes with "slice()".
+
+const language = "JavaScript";
+console.log(language.slice(-6)); // Script
+
+*🔹 "substring()"*
+
+*1️⃣7️⃣ "substring()"*
+
+"substring()" can also extract part of a string.
+
+const language = "JavaScript";
+console.log(language.substring(0, 4)); // Java
+
+For modern JavaScript code, "slice()" is often more convenient because it supports negative indexes.
+
+*🔹 Replacing Text*
+
+*1️⃣8️⃣ "replace()"*
+
+Replaces the first matching occurrence.
+
+const message = "I like JavaScript";
+const updated = message.replace("JavaScript", "Python");
+
+console.log(updated); // I like Python
+
+*1️⃣9️⃣ "replaceAll()"*
+
+Replaces all matching occurrences.
+
+const message = "JavaScript is great. JavaScript is popular.";
+const updated = message.replaceAll("JavaScript", "JS");
+console.log(updated); // JS is great. JS is popular.
+
+*🔹 Splitting Strings*
+
+*2️⃣0️⃣ "split()"*
+
+"split()" converts a string into an array.
+
+const names = "Amit,Priya,Rahul";
+const result = names.split(",");
+console.log(result); // ["Amit", "Priya", "Rahul"]
+
+const sentence = "Learn JavaScript step by step";
+const words = sentence.split(" ");
+console.log(words); // ["Learn", "JavaScript", "step", "by", "step"]
+
+*🔹 Joining Data*
+
+*2️⃣1️⃣ "join()"*
+
+"join()" combines array elements into a string.
+
+const words = ["Learn", "JavaScript"];
+const sentence = words.join(" ");
+console.log(sentence); // Learn JavaScript
+
+Notice:
+- split() → string → array
+- join() → array → string
+
+*⭐ Template Literals*
+
+*2️⃣2️⃣ What Are Template Literals?*
+
+Template literals use backticks:
+
+const message = `Hello`;
+
+Their biggest advantage is easy string interpolation.
+
+const name = "Rahul";
+const age = 25;
+const message = `My name is ${name} and I am ${age} years old.`;
+
+console.log(message); // My name is Rahul and I am 25 years old.
+
+*2️⃣3️⃣ Expressions Inside Template Literals*
+
+You can also use expressions.
+
+const price = 1000;
+const quantity = 3;
+const total = `Total: ${price * quantity}`;
+console.log(total); // Total: 3000
+
+*2️⃣4️⃣ Multi-line Strings*
+
+Template literals make multi-line text easier.
+
+const message = `
+Hello Rahul,
+
+Welcome to JavaScript.
+
+Keep learning!
+`;
+console.log(message);
+
+*🔹 Escape Characters*
+
+*2️⃣5️⃣ New Line*
+
+You can use "\n" and "\t":
+
+const message1 = "Hello\nWorld";
+console.log(message1);
+// Hello
+// World
+
+const message2 = "Name:\tRahul";
+console.log(message2); // Name: Rahul (with tab)
+
+*🔹 Comparing Strings*
+
+*2️⃣6️⃣ String Comparison*
+
+Strings can be compared:
+
+console.log("apple" === "apple"); // true
+console.log("Apple" === "apple"); // false - case-sensitive
+
+const input = "ADMIN";
+if (input.toLowerCase() === "admin") {
+console.log("Access granted");
+}
+
+*⭐ Practical String Processing*
+
+Imagine a user enters an email:
+
+const input = " USER@GMAIL.COM ";
+const email = input.trim().toLowerCase();
+console.log(email); // user@gmail.com
+
+if (email.includes("@")) {
+console.log("Email looks valid");
+}
+
+This combines:
+- trim() ↓ toLowerCase() ↓ includes()
+
+*🧠 Real-World Example*
+
+Suppose you receive this data:
+
+const data = "Amit, Priya, Rahul, Neha";
+const names = data.split(",");
+const cleanedNames = names.map(name => name.trim());
+
+console.log(cleanedNames); // ["Amit", "Priya", "Rahul", "Neha"]
+
+const filteredNames = cleanedNames.filter(
+name => name.startsWith("R")
+);
+
+console.log(filteredNames); // ["Rahul"]
+
+*⚠️ Common Beginner Mistakes*
+
+- *Mistake 1: Forgetting that strings are zero-indexed*
+const word = "Hello";
+console.log(word[0]); // H not e
+
+- *Mistake 2: Expecting string methods to modify the original string*
+const name = "rahul";
+name.toUpperCase();
+console.log(name); // still "rahul"
+
+const upperName = name.toUpperCase(); // correct
+
+- *Mistake 3: Forgetting "trim()"*
+- User input often has accidental spaces: " Rahul "
+
+- *Mistake 4: Confusing "split()" and "join()"*
+- split() → string → array
+- join() → array → string
+
+*💻 Practice*
+
+- *1️⃣ Reverse a String:* Given `const word = "JavaScript";` Try to produce tpircSavaJ. Hint: split() + reverse() +
+join()
+
+- *2️⃣ Count Characters:* Count characters in "JavaScript"
+
+- *3️⃣ Convert to Uppercase:* Convert "javascript is powerful" to uppercase.
+
+- *4️⃣ Extract Text:* From "JavaScript" extract Script
+
+- *5️⃣ Replace Text:* Convert "I love Python" into "I love JavaScript"
+
+- *6️⃣ Clean User Input:* Given `const input = " HELLO JAVASCRIPT ";` Produce hello javascript
+
+- *7️⃣ Challenge:* Given `const email = " USER@EXAMPLE.COM ";`
+
+Create a cleaned version that:
+- Removes extra spaces
+- Converts everything to lowercase
+- Checks whether it contains "@"
+- Prints "Valid email format" if it does.
+
+*🧠 Double Tap ❤️ For More*

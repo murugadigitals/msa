@@ -1,0 +1,326 @@
+💻 *JavaScript Roadmap 2026 — Part 5*
+
+🟢 *Functions in JavaScript*
+
+Functions are one of the most important concepts in JavaScript.
+
+A function is a reusable block of code designed to perform a particular task. Instead of writing the same code
+repeatedly, you can put it inside a function and call it whenever you need it.
+
+*1️⃣ Creating a Function*
+
+The basic syntax is:
+function greet() {
+console.log("Hello!");
+}
+
+This creates a function called "greet". But creating a function doesn't execute it.
+
+To execute it, you need to call it:
+greet();
+Output: Hello!
+
+*2️⃣ Why Do We Need Functions?*
+
+Imagine you need to print the same message three times.
+
+Without a function:
+console.log("Welcome to JavaScript");
+console.log("Welcome to JavaScript");
+
+With a function:
+function welcome() {
+console.log("Welcome to JavaScript");
+}
+
+welcome();
+welcome();
+welcome();
+
+Functions make code:
+✅ Reusable,
+✅ Easier to maintain,
+✅ Easier to test,
+✅ Easier to understand
+
+*3️⃣ Function Parameters*
+
+Functions can accept information through parameters.
+
+function greet(name) {
+console.log("Hello " + name);
+}
+
+greet("Rahul");
+greet("Priya");
+
+Output: Hello Rahul, Hello Priya
+
+Here: name → parameter, "Rahul" → argument.
+
+A parameter is the variable defined in the function. An argument is the actual value passed when calling it.
+
+*4️⃣ Multiple Parameters*
+
+A function can accept multiple parameters.
+function add(a, b) {
+console.log(a + b);
+}
+
+add(10, 5); // 15
+
+You can reuse the same function: add(20, 30); add(100, 50);
+
+*5️⃣ Returning a Value*
+
+A function doesn't always need to print something. It can return a value.
+
+function add(a, b) {
+return a + b;
+}
+
+let result = add(10, 5);
+console.log(result); // 15
+
+The important difference is: `console.log()` displays something. `return` sends a value back from the function.
+
+*6️⃣ Understanding "return"*
+function multiply(a, b) {
+return a * b;
+}
+
+let result = multiply(5, 4);
+console.log(result);
+
+The process is: multiply(5, 4) → 5 × 4 → 20 → return 20 → result = 20
+
+Once JavaScript executes "return", the function stops executing.
+function test() {
+return "Hello";
+console.log("This will not run");
+}
+
+*7️⃣ Functions Without "return"*
+function greet(name) {
+console.log("Hello " + name);
+}
+
+greet("Rahul");
+
+That's completely valid. If a function doesn't explicitly return a value, its return value is: *undefined*
+
+function greet() {
+console.log("Hello");
+}
+
+let result = greet();
+console.log(result); // Hello, undefined
+
+*8️⃣ Storing a Function in a Variable*
+
+Functions can be assigned to variables.
+const greet = function () {
+console.log("Hello");
+};
+
+greet();
+
+This is called a function expression.
+
+Compare:
+Function declaration: `function greet() { console.log("Hello"); }`
+
+Function expression: `const greet = function () { console.log("Hello"); };`
+
+Both can be called as functions, but they have different hoisting behavior.
+
+*🔹 Arrow Functions*
+
+*9️⃣ What Is an Arrow Function?*
+
+Arrow functions provide a shorter syntax for writing functions.
+
+Traditional function:
+function add(a, b) {
+return a + b;
+}
+
+Arrow function:
+const add = (a, b) => {
+return a + b;
+};
+
+For a simple expression, you can make it even shorter:
+const add = (a, b) => a + b;
+
+This is called an implicit return.
+
+*🔟 Arrow Function Examples*
+
+One parameter:
+const square = number => number * number;
+console.log(square(5)); // 25
+
+Multiple parameters:
+const multiply = (a, b) => a * b;
+console.log(multiply(4, 5)); // 20
+
+No parameters:
+const greet = () => {
+console.log("Hello");
+};
+greet();
+
+*1️⃣1️⃣ Default Parameters*
+
+You can provide a default value for a parameter.
+
+function greet(name = "Guest") {
+console.log("Hello " + name);
+}
+
+greet("Rahul"); // Hello Rahul
+
+greet(); // Hello Guest
+
+Default parameters are very useful when a value is optional.
+
+*1️⃣2️⃣ Rest Parameters*
+
+Sometimes you don't know how many arguments will be passed.
+
+You can use "...".
+
+function add(...numbers) {
+console.log(numbers);
+}
+
+add(10, 20, 30, 40); // [10, 20, 30, 40]
+
+The rest parameter collects the arguments into an array.
+function add(...numbers) {
+let total = 0;
+for (let number of numbers) {
+total += number;
+}
+return total;
+}
+
+console.log(add(10, 20, 30)); // 60
+
+*1️⃣3️⃣ Scope*
+
+Scope determines where a variable can be accessed.
+
+function greet() {
+let message = "Hello";
+console.log(message);
+}
+
+greet();
+
+"message" exists inside the function. Trying to access it outside: `console.log(message);` will cause an error.
+
+This is because "message" has function/local scope.
+
+*1️⃣4️⃣ Block Scope*
+
+Variables declared with "let" and "const" are block-scoped.
+if (true) {
+let message = "Hello";
+console.log(message);
+}
+
+This works. But: `console.log(message);` outside the block does not. The block is defined by `{ // block }`.
+
+This is one reason "let" and "const" are preferred over "var".
+
+*1️⃣5️⃣ Global Scope*
+
+A variable declared outside functions or blocks can be accessible from broader parts of the program.
+const appName = "My App";
+
+function showAppName() {
+console.log(appName);
+}
+
+showAppName(); // My App
+
+However, don't create unnecessary global variables. Too many globals can make larger applications difficult to maintain.
+
+*⭐ 1️⃣6️⃣ Callback Functions*
+
+A function can be passed to another function.
+function greet(name) {
+console.log("Hello " + name);
+}
+
+function processUser(callback) {
+callback("Rahul");
+}
+
+processUser(greet); // Hello Rahul
+
+Here: greet is passed as a value to processUser. This is called a callback function. Callbacks are extremely important
+in JavaScript because you'll encounter them throughout: Events, Array methods, Asynchronous programming, APIs, Node.js
+
+*⭐ 1️⃣7️⃣ Higher-Order Functions*
+
+A higher-order function is a function that: accepts another function as an argument, or returns a function.
+function calculate(a, b, operation) {
+return operation(a, b);
+}
+
+const add = (a, b) => a + b;
+
+console.log(calculate(10, 5, add)); // 15
+
+Here "calculate()" receives another function. That's a higher-order function.
+
+*⭐ 1️⃣8️⃣ Functions Returning Functions*
+
+A function can also return another function.
+function createGreeting(name) {
+return function () {
+console.log("Hello " + name);
+};
+}
+
+const greetRahul = createGreeting("Rahul");
+greetRahul(); // Hello Rahul
+
+This concept leads directly into one of JavaScript's most important advanced topics: *Closures*. We'll cover closures
+separately later.
+
+*1️⃣9️⃣ Pure Functions*
+
+A pure function generally: 1. Produces the same output for the same input. 2. Doesn't modify external state.
+function add(a, b) {
+return a + b;
+}
+
+Every time: `add(2, 3)` returns: `5`. A function that depends on changing external state can behave differently.
+Understanding pure functions becomes particularly useful when working with modern frontend frameworks.
+
+*🧠 Real-World Example*
+
+Imagine an online shopping application.
+
+function calculateDiscount(price, discount) {
+return price - discount;
+}
+
+function calculateTax(price, taxRate) {
+return price * taxRate;
+}
+
+let price = 2000;
+let discountedPrice = calculateDiscount(price, 300);
+let tax = calculateTax(discountedPrice, 0.18);
+
+console.log(discountedPrice);
+console.log(tax);
+
+Instead of putting everything into one huge block of code, each function handles a specific responsibility.
+
+*🧠 Double Tap ❤️ For More*

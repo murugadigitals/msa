@@ -1,0 +1,303 @@
+*💻 JavaScript Roadmap 2026 — Part 6*
+
+*🟢 Arrays in JavaScript*
+
+Arrays are one of the most commonly used data structures in JavaScript.
+
+An array allows you to store multiple values in a single variable.
+
+For example:
+const fruits = ["Apple", "Banana", "Mango"];
+
+Instead of creating three separate variables, you can keep all the values together.
+
+*1️⃣ Creating an Array*
+
+The simplest way is using square brackets:
+const fruits = ["Apple", "Banana", "Mango"];
+
+You can also create an empty array:
+const numbers = [];
+Then add values later.
+numbers.push(10);
+numbers.push(20);
+
+*2️⃣ Array Index*
+
+JavaScript arrays use zero-based indexing.
+
+That means the first element has index "0".
+const fruits = ["Apple", "Banana", "Mango"];
+
+The positions are:
+Index 0 → Apple
+Index 1 → Banana
+Index 2 → Mango
+
+To access an element:
+console.log(fruits[0]);
+// Output: Apple
+
+console.log(fruits[2]);
+// Output: Mango
+
+*⭐ Remember*
+
+First element → index 0
+Second element → index 1
+Third element → index 2
+
+*3️⃣ Changing an Array Element*
+
+Arrays are mutable, meaning their elements can be changed.
+const fruits = ["Apple", "Banana", "Mango"];
+
+fruits[1] = "Orange";
+
+console.log(fruits);
+// Output: ["Apple", "Orange", "Mango"]
+
+Notice something important:
+
+Even though "fruits" was declared using "const", we can modify its contents.
+
+This is because "const" prevents reassignment of the variable, not mutation of the array itself.
+
+This would be different:
+fruits = ["Grapes", "Orange"]; // Not allowed
+
+That is not allowed because you're trying to reassign the variable.
+
+*4️⃣ Array Length*
+
+Use ".length" to find the number of elements.
+const fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits.length);
+// Output: 3
+
+console.log(fruits[fruits.length - 1]);
+// Output: Mango
+
+*🔹 Adding & Removing Elements*
+
+*5️⃣ "push()"*
+
+Adds an element to the end of an array.
+const fruits = ["Apple", "Banana"];
+
+fruits.push("Mango");
+
+console.log(fruits);
+// Output: ["Apple", "Banana", "Mango"]
+
+*6️⃣ "pop()"*
+
+Removes the last element.
+const fruits = ["Apple", "Banana", "Mango"];
+
+fruits.pop();
+
+console.log(fruits);
+// Output: ["Apple", "Banana"]
+
+const removed = fruits.pop();
+console.log(removed);
+
+*7️⃣ "unshift()"*
+
+Adds an element to the beginning.
+const fruits = ["Banana", "Mango"];
+
+fruits.unshift("Apple");
+
+console.log(fruits);
+// Output: ["Apple", "Banana", "Mango"]
+
+*8️⃣ "shift()"*
+
+Removes the first element.
+const fruits = ["Apple", "Banana", "Mango"];
+
+fruits.shift();
+
+console.log(fruits);
+// Output: ["Banana", "Mango"]
+
+*Quick memory trick*
+push() → add at end
+pop() → remove from end
+unshift() → add at beginning
+shift() → remove from beginning
+
+*🔹 Searching Arrays*
+
+*9️⃣ "includes()"*
+
+Checks whether an array contains a value.
+const fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits.includes("Banana")); // true
+console.log(fruits.includes("Orange")); // false
+
+*🔟 "indexOf()"*
+
+Returns the index of an element.
+const fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits.indexOf("Banana")); // 1
+console.log(fruits.indexOf("Orange")); // -1
+
+*🔄 Iterating Through Arrays*
+
+*1️⃣1️⃣ Traditional "for" Loop*
+const fruits = ["Apple", "Banana", "Mango"];
+
+for (let i = 0; i < fruits.length; i++) { console.log(fruits[i]); } *1️⃣2️⃣ "for...of" * A simpler approach: for (const
+    fruit of fruits) { console.log(fruit); } *⭐ Array Methods You Must Know* Modern JavaScript heavily uses methods that
+    operate on arrays. The most important ones are: forEach(), map(), filter(), find(), findIndex(), some(), every(),
+    reduce(), sort(), slice(), splice() Let's understand them one by one. *1️⃣3️⃣ "forEach()" * "forEach()" runs a
+    function for every element. const numbers=[10, 20, 30]; numbers.forEach(function(number) { console.log(number); });
+    // Arrow function numbers.forEach(number=> {
+    console.log(number);
+    });
+
+    // With index
+    numbers.forEach((number, index) => {
+    console.log(index, number);
+    });
+
+    *1️⃣4️⃣ "map()"*
+
+    "map()" creates a new array by transforming every element.
+    const numbers = [1, 2, 3, 4];
+    const doubled = numbers.map(number => number * 2);
+
+    console.log(doubled); // [2, 4, 6, 8]
+
+
+    *1️⃣5️⃣ "filter()"*
+
+    "filter()" creates a new array containing only elements that satisfy a condition.
+    const numbers = [10, 15, 20, 25, 30];
+    const result = numbers.filter(number => number >= 20);
+
+    console.log(result); // [20, 25, 30]
+
+    *1️⃣6️⃣ "find()"*
+
+    "find()" returns the first element that satisfies a condition.
+    const numbers = [10, 15, 20, 25, 30];
+
+    const result = numbers.find(number => number > 18);
+
+    console.log(result); // 20
+
+    Difference:
+    find() → first matching element
+    filter() → all matching elements
+
+    *1️⃣7️⃣ "findIndex()"*
+
+    Returns the index of the first matching element.
+    const numbers = [10, 15, 20, 25];
+    const index = numbers.findIndex(number => number > 18);
+
+    console.log(index); // 2
+
+    *1️⃣8️⃣ "some()"*
+
+    Checks whether at least one element satisfies a condition.
+    const numbers = [10, 15, 20, 25];
+    const result = numbers.some(number => number > 20);
+
+    console.log(result); // true
+
+    *1️⃣9️⃣ "every()"*
+
+    Checks whether all elements satisfy a condition.
+    const numbers = [10, 20, 30];
+    console.log(numbers.every(number => number > 5)); // true
+
+    const numbers2 = [10, 20, 3];
+    console.log(numbers2.every(number => number > 5)); // false
+
+    *⭐ 2️⃣0️⃣ "reduce()"*
+
+    "reduce()" is one of the most powerful array methods.
+    const numbers = [10, 20, 30, 40];
+
+    const total = numbers.reduce(
+    (sum, number) => sum + number,
+    0
+    );
+
+    console.log(total); // 100
+
+    // Real-world example
+    const prices = [500, 1000, 750];
+    const totalPrice = prices.reduce((sum, price) => sum + price, 0);
+
+    console.log(totalPrice); // 2250
+
+    *🔹 "slice()" vs "splice()"*
+
+    *2️⃣1️⃣ "slice()"*
+
+    "slice()" extracts part of an array without modifying the original array.
+    const fruits = ["Apple", "Banana", "Mango", "Orange"];
+    const result = fruits.slice(1, 3);
+
+    console.log(result); // ["Banana", "Mango"]
+
+    *2️⃣2️⃣ "splice()"*
+
+    "splice()" can add, remove or replace elements and modifies the original array.
+    const fruits = ["Apple", "Banana", "Mango"];
+
+    fruits.splice(1, 1);
+    console.log(fruits); // ["Apple", "Mango"]
+
+    fruits.splice(1, 0, "Orange");
+    console.log(fruits); // ["Apple", "Orange", "Mango"]
+
+    Remember:
+    slice() → doesn't modify original
+    splice() → modifies original
+
+    *🔄 Sorting Arrays*
+
+    *2️⃣3️⃣ "sort()"*
+
+    "sort()" sorts an array.
+    const fruits = ["Mango", "Apple", "Banana"];
+    fruits.sort();
+    console.log(fruits); // ["Apple", "Banana", "Mango"]
+
+    *⚠️ Important Number Sorting*
+    const numbers = [10, 2, 30, 5];
+    numbers.sort();
+    console.log(numbers); // Unexpected result
+
+    // For numerical sorting:
+    numbers.sort((a, b) => a - b); // Ascending
+    numbers.sort((a, b) => b - a); // Descending
+    This is an important interview concept.
+
+    *🧠 Real-World Example*
+    const customers = [
+    { name: "Amit", age: 25 },
+    { name: "Priya", age: 32 },
+    { name: "Rahul", age: 19 }
+    ];
+
+    // Find customers who are at least 25
+    const adults = customers.filter(customer => customer.age >= 25);
+
+    // Get only their names
+    const names = customers.map(customer => customer.name);
+
+    // Find the first customer older than 30
+    const customer = customers.find(customer => customer.age > 30);
+
+    *💻 Double Tap ❤️ For More*

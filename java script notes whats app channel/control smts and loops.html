@@ -1,0 +1,213 @@
+💻 *JavaScript Roadmap 2026 — Part 4*
+
+*🟢 Conditional Statements & Loops*
+
+Programs often need to make decisions and repeat tasks.
+
+For example:
+- If a user is logged in → show the dashboard.
+- If the payment fails → show an error.
+- Repeat a task for every item in a list.
+- Continue processing until a condition becomes false.
+
+JavaScript provides conditional statements and loops for this.
+
+*1️⃣ "if" Statement*
+
+The "if" statement executes code only when a condition is "true".
+let age = 20;
+
+if (age >= 18) {
+console.log("You are an adult");
+}
+
+Since "age >= 18" is "true", the message is printed.
+
+Basic structure
+if (condition) {
+// code to execute
+}
+
+*2️⃣ "if...else"*
+
+Use "else" when you want to execute another block if the condition is false.
+
+let age = 16;
+
+if (age >= 18) {
+console.log("You can vote");
+} else {
+console.log("You cannot vote");
+}
+
+Output: You cannot vote
+
+
+*3️⃣ "else if"*
+
+Sometimes there are multiple conditions.
+let marks = 75;
+
+if (marks >= 90) {
+console.log("Grade A+");
+} else if (marks >= 75) {
+console.log("Grade A");
+} else if (marks >= 60) {
+console.log("Grade B");
+} else {
+console.log("Grade C");
+}
+
+Output: Grade A
+
+JavaScript checks the conditions from top to bottom. Once it finds a true condition, the remaining "else if" blocks are
+skipped.
+
+*4️⃣ Multiple Conditions*
+
+You can combine conditions using logical operators.
+
+let age = 25;
+let hasID = true;
+
+if (age >= 18 && hasID) {
+console.log("Access granted");
+}
+
+Both conditions must be true because we used "&&".
+
+Using OR
+let hasEmail = false;
+let hasPhone = true;
+
+if (hasEmail || hasPhone) {
+console.log("Contact information available");
+}
+
+At least one condition needs to be true.
+
+*5️⃣ Nested "if"*
+
+An "if" statement can exist inside another "if".
+
+let isLoggedIn = true;
+let isAdmin = true;
+
+if (isLoggedIn) {
+if (isAdmin) {
+console.log("Admin dashboard");
+}
+}
+
+Nested conditions can be useful, but too much nesting can make code difficult to read. When logic becomes complicated,
+consider restructuring the conditions.
+
+*🔹 "switch" Statement*
+
+*6️⃣ What is "switch"?*
+
+"switch" is useful when you want to compare one value against several possible values.
+
+let day = "Monday";
+
+switch (day) {
+case "Monday":
+console.log("Start of the week");
+break;
+case "Friday":
+console.log("Almost weekend");
+break;
+default:
+console.log("Regular day");
+}
+
+Output: Start of the week
+
+*7️⃣ Why "break" Matters*
+
+let number = 2;
+
+switch (number) {
+case 1:
+console.log("One");
+break;
+case 2:
+console.log("Two");
+break;
+case 3:
+console.log("Three");
+break;
+}
+
+"break" tells JavaScript to exit the "switch". Without it, execution can continue into subsequent cases. This behavior
+is called fall-through.
+
+*8️⃣ "default"*
+
+"default" runs when none of the cases match.
+let fruit = "Mango";
+
+switch (fruit) {
+case "Apple":
+console.log("Apple");
+break;
+case "Banana":
+console.log("Banana");
+break;
+default:
+console.log("Unknown fruit");
+}
+
+Output: Unknown fruit
+
+*🔁 LOOPS*
+
+Loops allow you to execute code repeatedly.
+
+Instead of writing:
+console.log(1);
+console.log(2);
+console.log(3);
+
+you can use a loop.
+
+*9️⃣ "for" Loop*
+
+The traditional "for" loop has three parts:
+
+for (initialization; condition; update) {
+// code
+}
+Example:
+for (let i = 1; i <= 5; i++) { console.log(i); } Output: 1 2 3 4 5 Let's break it down: - let i=1 → Start with 1. - i
+    <=5 → Continue while "i" is less than or equal to 5. - i++ → Increase "i" after every iteration. *🔟 Understanding
+    an Iteration* For: for (let i=1; i <=3; i++) { console.log(i); } JavaScript roughly follows: - i=1 → condition true
+    → print 1 - i=2 → condition true → print 2 - i=3 → condition true → print 3 - i=4 → condition false → stop
+    Understanding this process is more important than memorizing the syntax. *1️⃣1️⃣ "while" Loop* A "while" loop runs
+    as long as its condition remains true. let count=1; while (count <=5) { console.log(count); count++; } Output: 1 2 3
+    4 5 Be careful to update the variable. This can create an infinite loop: let count=1; while (count <=5) {
+    console.log(count); } "count" never changes, so the condition never becomes false. *1️⃣2️⃣ "do...while" *
+    A "do...while" loop executes the code at least once, because the condition is checked after the code runs. let
+    count=10; do { console.log(count); count++; } while (count < 5); Output: 10 Even though "count < 5" is false, the
+    code runs once. Compare: while (count < 5) { console.log(count); } The "while" loop may execute zero times.
+    *1️⃣3️⃣ "break" * "break" immediately stops a loop. for (let i=1; i <=10; i++) { if (i===5) { break; }
+    console.log(i); } Output: 1 2 3 4 *1️⃣4️⃣ "continue" * "continue" skips the current iteration and moves to the next
+    one. for (let i=1; i <=5; i++) { if (i===3) { continue; } console.log(i); } Output: 1 2 4 5 *1️⃣5️⃣ Nested Loops*
+    You can put one loop inside another. for (let i=1; i <=3; i++) { for (let j=1; j <=2; j++) { console.log(i, j); } }
+    Output: - 1 1 - 1 2 - 2 1 - 2 2 - 3 1 - 3 2 Nested loops are useful for: - Grids - Tables - Matrices - Combinations
+    - Certain algorithmic problems But they can become expensive when working with large datasets. *⭐ 1️⃣6️⃣ "for...of"
+    * "for...of" is especially useful for iterating over values in an iterable such as an array or string. let
+    fruits=["Apple", "Banana" , "Mango" ]; for (let fruit of fruits) { console.log(fruit); } Output: Apple Banana Mango
+    *⭐ 1️⃣7️⃣ "for...in" * "for...in" is commonly used to iterate over enumerable property keys of an object. let
+    person={ name: "Rahul" , age: 25, city: "Pune" }; for (let key in person) { console.log(key); } Output: name age
+    city To access the corresponding value: for (let key in person) { console.log(key, person[key]); } Output: name
+    Rahul, age 25, city Pune Important distinction - for...of → values - for...in → property keys *🧠 Real-World
+    Example* Imagine an e-commerce application. You want to check whether each customer has completed their payment. let
+    payments=[ "success" , "success" , "failed" , "success" ]; for (let payment of payments) { if (payment==="success" )
+    { console.log("Order confirmed"); } else { console.log("Payment failed"); } } Output: Order confirmed, Order
+    confirmed, Payment failed, Order confirmed *💻 Practice* 1️⃣ Voting eligibility Write a program that prints Eligible
+    when age is 18 or above, otherwise Not eligible 2️⃣ Even numbers Use a loop to print: 2 4 6 8 10 3️⃣ Multiplication
+    table Print the multiplication table of 7 4️⃣ Find a number Loop from 1 to 20 and stop when you reach 13.
+    Use "break" . 5️⃣ Skip numbers Loop from 1 to 10 but skip 5. Use "continue" . 6️⃣ Predict the output for (let i=1; i
+    <=5; i++) { if (i===3) { continue; } console.log(i); } 7️⃣ Challenge Write a program that checks numbers from 1 to
+    20 and prints Even for even numbers and Odd for odd numbers. Hint: number % 2===0 *🧠 Double Tap ❤️ For More*
