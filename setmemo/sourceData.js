@@ -5,7 +5,7 @@ let days = [  "Sunday",  "Monday",  "Tuesday",  "Wednesday",  "Thursday",  "Frid
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var mdate = `${days[today.getDay()]}, ${today.getDate()} - ${months[today.getMonth()]} - ${today.getFullYear()}`;
 
-document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+// document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
 
 // prettier-ignore
 var sorters = [
@@ -25,8 +25,13 @@ var mts = ["OS Arranged", "M Vasanth Kumar", "V Hari Krishna", "V Munnelu", "M J
 
 var gds = ["J Dilli Babu", "N Hari Prasad", "N Murali Babu"];
 
+var outsiderSA = ["P Archana", "N Neeraja", "V Selvi", "P Venkatesh", "A Hemalatha", "G Kulai Basha"];
+var outsiderMTS = ["MTV Sai Kumar", "M Muni Reddy", "BV Reddy", "SA Khader Basha", "C Nirmala", "C Rupesh Chandra"];
+
 export var sorters;
 export var mdate;
 export var mailguards;
 export var mts;
 export var gds;
+export var outsiderSA;
+export var outsiderMTS;

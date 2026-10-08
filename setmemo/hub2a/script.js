@@ -30,7 +30,7 @@ function bodyLoad1() {
   /* prettier-ignore-start */
   const mgDropdown = ["optMg1", "optMg2"];
   const mtsDropdown = ["optMts1", "optMts2", "optMts3", "optMts4", "optMts5", "optMts6", "optMts7"];
-  const gdsDropdown = ["optGds1", "optGds2", "optGds3", "optGds4", "optGds5", "optGds6", "optGds7", "optGds8", "optGds9", "optGds10", "optGds11"];
+  const gdsDropdown = ["optGds1", "optGds2", "optGds3", "optGds4", "optGds5", "optGds6", "optGds7", "optGds8", "optGds9", "optGds10", "optGds11", "optGds12"];
 
   /* prettier-ignore-end */
 
@@ -149,6 +149,7 @@ function printClick() {
     optGds9: "gds9test",
     optGds10: "gds10test",
     optGds11: "gds11test",
+    optGds12: "gds12test",
   };
 
   Object.entries(fields).forEach(([source, target]) => {

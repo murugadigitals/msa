@@ -1,0 +1,38 @@
+* {
+  font-weight: bold;
+}
+
+#header {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+#namesTable {
+  width: 100%;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+#namesTable thead tr th,
+#namesTable tbody tr td,
+#namesTable tfoot tr td {
+  border: 0.5px solid black;
+}
+
+#tableContainer {
+  display: none;
+}
+
+@media print {
+  #inputContainer {
+    display: none;
+  }
+
+  #tableContainer {
+    display: block;
+  }
+}
