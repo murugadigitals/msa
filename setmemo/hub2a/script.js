@@ -156,6 +156,8 @@ function printClick() {
     document.getElementById(target).textContent = document.getElementById(source).value;
   });
 
+  document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
+
   window.print();
 }
 

@@ -10,6 +10,22 @@
   height: 10vh;
 }
 
+button {
+  padding: 5px 25px;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: yellow;
+  font-weight: bold;
+  transition-duration: 0.5s;
+  color: red;
+}
+
+select {
+  padding: 5px;
+  width: 200px;
+}
+
 #namesTable {
   width: 100%;
   margin: auto;
@@ -27,6 +43,17 @@
   display: none;
 }
 
+#tableContainer td[contenteditable="true"] {
+  cursor: text;
+  min-width: 70px;
+  outline: none;
+}
+
+#tableContainer td[contenteditable="true"]:focus {
+  background-color: #fff8dc;
+  outline: 1px solid #4a90e2;
+}
+
 @media print {
   #inputContainer {
     display: none;
@@ -34,5 +61,10 @@
 
   #tableContainer {
     display: block;
+  }
+
+  #tableContainer td[contenteditable="true"]:focus {
+    outline: none;
+    background-color: transparent;
   }
 }

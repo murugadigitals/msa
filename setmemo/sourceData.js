@@ -17,21 +17,32 @@ var sorters = [
   "S Suresh Kumar",  "G Ekambaram",  "K Bhargava Varma",  "M Rupesh Kumar",  "G Ganesh",
   "Y Maneendra Reddy",  "N Raja Sekhar",  "I Charitha",  "B Mahesh",  "K Nagendra",  "V Nagendra Babu",
   "VR Shiva Narayana",  "B Raghuram Naik",  "V Trilokeswar",  "N Ashok Kumar",  "B Md Rafi",  "R Suresh",
-  "A Purusotham Raju","S Chakrapani"];
+  "A Purusotham Raju","S Chakrapani","N Hari Krishna","K Pavan Singh"];
 
 var mailguards = ["P Koteswara Sharma", "N Subramanyam Reddy", "T Kavitha", "S Pravallika Jeevan", "P Parthasarathy"];
-
-var mts = ["OS Arranged", "M Vasanth Kumar", "V Hari Krishna", "V Munnelu", "M Jarayraman", "K Ramanjulu", "K Bala Krishna", "B Raja Naik", "M Nirmala", "G Giri Prasad", "V Suneetha", "N Om Shankar"];
+// prettier-ignore
+var mts = ["OS Arranged", "M Vasanth Kumar", "V Hari Krishna", "V Munnelu", "M Jarayraman", "K Ramanjulu", "K Bala Krishna", "B Raja Naik", "M Nirmala", "G Giri Prasad", "V Suneetha", "N Om Shankar","CH Lakshmi Devi"];
 
 var gds = ["J Dilli Babu", "N Hari Prasad", "N Murali Babu"];
+// prettier-ignore
+var outsiderSA = ["P Archana", "N Neeraja", "V Selvi", "P Venkatesh", "A Hemalatha", "G Kulai Basha", "B Kalyan Kumar", 
+                  "E Jyoti", "M Rajeswari", "N Sudarshan", "A Kamakshi","B Devaraja","B Nagamma","BR Rojavathi","D Aruna",
+                  "G Bala Surendra","K Sai Durga","K Sreekanth","K Sunil","N Aruna Jyoti","N Pradeep","N Pavani","S Lohitha Sree","T Sailaja",
+                  "T Manjula","V Swathi"];
+// prettier-ignore
+var outsiderMTS = ["MTV Sai Kumar", "M Muni Reddy", "BV Reddy", "SA Khader Basha", "C Nirmala", "C Rupesh Chandra",
+                  "N Vani","P Varalakshmi","C Nirmala","G Jyoti","T Manoj","G Jeeva","T Dilip Kumar","SA Khader Basha",
+                  "SVT Reddy","B Srinivasulu","SKMD Basha","S Subramanyam","V Subramanyam","C Doraswamy","P Venakataswamy",
+                  "C Haridas Reddy","V Dilli Sekhar","K Chinnaiah","S Usman","BLN Reddy",
+                  "MV Ramana Murthy","E Murali","G Bala Krishna","N Murali Prasad","N Uday Kumar","P Jayamma",
+                  "P Pratap Reddy",
+];
 
-var outsiderSA = ["P Archana", "N Neeraja", "V Selvi", "P Venkatesh", "A Hemalatha", "G Kulai Basha"];
-var outsiderMTS = ["MTV Sai Kumar", "M Muni Reddy", "BV Reddy", "SA Khader Basha", "C Nirmala", "C Rupesh Chandra"];
-
-export var sorters;
-export var mdate;
+export var sorters, mdate, mailguards, mts, gds, outsiderSA, outsiderMTS;
+/*export var mdate;
 export var mailguards;
 export var mts;
 export var gds;
 export var outsiderSA;
 export var outsiderMTS;
+*/
