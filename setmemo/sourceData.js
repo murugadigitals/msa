@@ -4,6 +4,7 @@ var today = new Date();
 let days = [  "Sunday",  "Monday",  "Tuesday",  "Wednesday",  "Thursday",  "Friday",  "Saturday",];
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var mdate = `${days[today.getDay()]}, ${today.getDate()} - ${months[today.getMonth()]} - ${today.getFullYear()}`;
+var mdatePlus = `${days[today.getDay() + 1]}, ${today.getDate() + 1} - ${months[today.getMonth()]} - ${today.getFullYear()}`;
 
 // document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
 
@@ -38,7 +39,7 @@ var outsiderMTS = ["MTV Sai Kumar", "M Muni Reddy", "BV Reddy", "SA Khader Basha
                   "P Pratap Reddy",
 ];
 
-export var sorters, mdate, mailguards, mts, gds, outsiderSA, outsiderMTS;
+export var sorters, mdate, mailguards, mts, gds, outsiderSA, outsiderMTS, mdatePlus;
 /*export var mdate;
 export var mailguards;
 export var mts;

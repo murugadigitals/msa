@@ -1,4 +1,4 @@
-import { mailguards, mts, sorters, mdate } from "../sourceData.js";
+import { mailguards, mts, sorters, mdate, mdatePlus } from "../sourceData.js";
 
 let items = [];
 
@@ -94,8 +94,28 @@ document.getElementById("genTable").addEventListener("click", function () {
   if (tableContainer.style.display === "none") {
     document.getElementById("preview").click();
   }
+  let officeName = document.getElementById("optOffice").value;
+  let hsaSign = document.getElementById("hsaSign").value;
 
-  document.getElementById("dateDiv").innerHTML = `OTA Annexure, Tirupati HUB - 2A Dated : ${mdate}`;
+  if (officeName === "Tirupati HUB - 2A") {
+    document.getElementById("dateDiv").innerHTML = `MTS Annexure, Tirupati HUB - 2A Dated : ${mdate}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "Tirupati HUB - 2B") {
+    document.getElementById("dateDiv").innerHTML = `MTS Annexure, Tirupati HUB - 2B Dated : ${mdate}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "Tirupati HUB - 1") {
+    document.getElementById("dateDiv").innerHTML = `MTS Annexure, Tirupati HUB - 1 Dated : ${mdatePlus}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "Tirupati TMO - 1") {
+    document.getElementById("dateDiv").innerHTML = `MTS Annexure, Tirupati TMO - 1 Dated : ${mdatePlus}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "Tirupati TMO - 2") {
+    document.getElementById("dateDiv").innerHTML = `MTS Annexure, Tirupati TMO - 2 Dated : ${mdatePlus}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "Renigunta TMO - 1") {
+    document.getElementById("dateDiv").innerHTML = `MTS Annexure, Renigunta TMO - 1 Dated : ${mdatePlus}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  }
 
   window.print();
   location.reload();

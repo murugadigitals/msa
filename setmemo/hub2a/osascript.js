@@ -1,4 +1,4 @@
-import { outsiderSA, mdate } from "../sourceData.js";
+import { outsiderSA, mdate, mdatePlus } from "../sourceData.js";
 
 let items = [];
 
@@ -92,7 +92,19 @@ document.getElementById("genTable").addEventListener("click", function () {
     document.getElementById("preview").click();
   }
 
-  document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 2A Dated : ${mdate}`;
+  let officeName = document.getElementById("optOffice").value;
+  let hsaSign = document.getElementById("hsaSign").value;
+
+  if (officeName === "Tirupati HUB - 2A") {
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 2A Dated : ${mdate}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "Tirupati HUB - 2B") {
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 2B Dated : ${mdate}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  } else if (officeName === "Tirupati HUB - 1") {
+    document.getElementById("dateDiv").innerHTML = `OSA Annexure, Tirupati HUB - 1 Dated : ${mdatePlus}`;
+    document.getElementById("hsaSign").textContent = officeName;
+  }
 
   window.print();
 });

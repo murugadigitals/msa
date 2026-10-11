@@ -30,8 +30,14 @@
   border-spacing: 0;
 }
 
-#namesTable thead tr th,
-#namesTable tbody tr td {
+table {
+  width: 100%;
+  margin: auto;
+}
+
+#namesDiv thead tr th,
+#namesDiv tbody tr td,
+#namesDiv tfoot tr td {
   border: 0.5px solid black;
 }
 
@@ -99,7 +105,9 @@ button {
     display: none;
   }
   #tableContainer {
-    display: block;
+    display: block !important;
+    width: 100%;
+    margin: auto;
   }
   body {
     width: 100%;
