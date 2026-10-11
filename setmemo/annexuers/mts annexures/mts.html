@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
 
-    <link rel="stylesheet" href="../assests/annexure.css">
+    <link rel="stylesheet" href="../../assests/filecss.css">
     <title>MTS Annexure Tirupati HUB-2A</title>
 
 </head>
@@ -16,8 +16,8 @@
 <body>
     <div id="inputContainer">
         <div>
-
             <h1 style="text-align: center;">MTS ANNEXURE Tirupati HUB - 2A </h1>
+
         </div>
         <div>
             <label for="" style="margin-right: 50px;">Select Office :</label>
@@ -54,58 +54,59 @@
 
             <div id="header">
                 <div id="ashok">
-                    <img src="../assests/ashok.png" alt="" width="80" height="80">
+                    <img src="../../assests/ashok.png" alt="" width="75" height="80">
                 </div>
                 <div
-                    style="text-align: center;position: relative;text-wrap:nowrap;z-index: 100;line-height: 25px;font-weight: bold;">
+                    style="text-align: center;position: relative;text-wrap:nowrap;z-index: 100;line-height: 22px;font-weight: bold;">
                     <div>Department of Posts :: India</div>
                     <div>Head Record Office, RMS TP Dn., Tirupati - 517501</div>
-                    <div id="dateDiv"></div>
+                    <div id="dateDiv" style="text-decoration: underline;"></div>
                 </div>
                 <div id="logo">
-                    <img src="../assests/logo.png" alt="" width="140" height="80">
+                    <img src="../../assests/logo.png" alt="" width="130" height="80">
                 </div>
             </div>
         </div>
         <br>
-        <table id="namesTable">
+        <div id="namesDiv">
+            <table id="namesTable">
+                <thead>
+                    <tr style="background-color: yellow;text-align: center;">
+                        <th style="border-top-left-radius: 7px;">S.NO</th>
+                        <th width="200">Name of the Outsider<br>worked in Vacant<br>Post</th>
+                        <th>Duty<br>From</th>
+                        <th>Duty<br>To</th>
+                        <th>Total<br>Hrs</th>
+                        <th>Nature of <br>Work<br>Allotted</th>
+                        <th>Signature of<br>the<br>Outsider</th>
+                        <th style="border-top-right-radius: 7px;">Remarks</th>
+                    </tr>
+                </thead>
 
-            <thead>
-                <tr style="background-color: yellow;text-align: center;">
-                    <th style="border-top-left-radius: 7px;">S.NO</th>
-                    <th width="200">Name of the Outsider<br>worked in Vacant<br>Post</th>
-                    <th>Duty<br>From</th>
-                    <th>Duty<br>To</th>
-                    <th>Total<br>Hrs</th>
-                    <th>Nature of <br>Work<br>Allotted</th>
-                    <th>Signature of<br>the<br>Outsider</th>
-                    <th style="border-top-right-radius: 7px;">Remarks</th>
-                </tr>
-            </thead>
+                <tbody style="text-align: center;">
 
-            <tbody style="text-align: center;">
-
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td colspan="4" style="border-bottom-left-radius: 7px;">Total</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td style="border-bottom-right-radius: 7px;">&nbsp;</td>
-                </tr>
-            </tfoot>
-        </table>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td colspan="4" style="border-bottom-left-radius: 7px;">Total</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td style="border-bottom-right-radius: 7px;">&nbsp;</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
         <br><br>
 
@@ -122,7 +123,7 @@
         </div>
 
     </div>
-    <script type="module" src="./mtsscript.js"></script>
+    <script type="module" src="./mts.js"></script>
 
     </bodyonload=>
 

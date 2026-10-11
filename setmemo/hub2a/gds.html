@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div id="inputContainer">
+    <div id="inputContainer" style="display: grid;grid-template-columns: 4fr 4fr 4fr;">
         <div id="saContainer">
 
             <div id="btnsContainer">
@@ -94,7 +94,7 @@
                     <button>Reset</button>
                 </div>
                 <div>
-                    <button>Preview</button>
+                    <button id="preview">Preview</button>
                 </div>
             </div>
         </div>
@@ -105,16 +105,16 @@
 
             <div id="header" style="margin: 0;height: 8vh !important;">
                 <div id="ashok">
-                    <img src="../assests/ashok.png" alt="" width="70" height="80">
+                    <img src="../assests/ashok.png" alt="" width="50" height="50">
                 </div>
                 <div
-                    style="text-align: center;position: relative;text-wrap:nowrap;z-index: 100;line-height: 25px;font-weight: bold;">
+                    style="text-align: center;position: relative;text-wrap:nowrap;z-index: 100;line-height: 20px;font-weight: bold;">
                     <div>Department of Posts :: India</div>
                     <div>Head Record Office, RMS TP Dn., Tirupati - 517501</div>
-                    <div id="setName"></div>
+                    <div id="setName" style="text-decoration: underline;"></div>
                 </div>
                 <div id="logo">
-                    <img src="../assests/logo.png" alt="" width="140" height="80">
+                    <img src="../assests/logo.png" alt="" width="120" height="50">
                 </div>
             </div>
         </div>
@@ -155,7 +155,7 @@
                         <td style="text-align:left;text-indent:10px" id="gds3test"></td>
                         <td>18:00:00</td>
                         <td>23:00:00</td>
-                        <td id="rajaHours">-</td>
+                        <td id="rajaHours">5</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
@@ -164,7 +164,7 @@
                         <td style="text-align:left;text-indent:10px" id="gds4test"></td>
                         <td>19:30:00</td>
                         <td>00:30:00</td>
-                        <td>5</td>
+                        <td id="hariHours">-</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
@@ -244,9 +244,9 @@
                     <tr style="font-size:14px;">
                         <td>12</td>
                         <td style="text-align:left;text-indent:10px" id="gds12test"></td>
-                        <td>01:00:00</td>
-                        <td>06:00:00</td>
-                        <td>5</td>
+                        <td>17:30:00</td>
+                        <td>19:30:00</td>
+                        <td>2</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>

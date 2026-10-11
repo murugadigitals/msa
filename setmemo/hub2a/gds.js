@@ -63,5 +63,11 @@ document.getElementById("print").addEventListener("click", function (e) {
   window.print();
 });
 
+document.getElementById("preview").addEventListener("click", function () {
+  alert("preview working");
+  document.getElementById("tableContainer").style.display = "block";
+  document.getElementById("tableContainer").contentEditable = true;
+});
+
 // window.bodyLoad1 = bodyLoad1;
 // window.printClick = printClick;

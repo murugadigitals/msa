@@ -1,10 +1,9 @@
-import { outsiderMTS, mdate, mdatePlus } from "../sourceData.js";
+import { mailguards, mts, sorters, mdate, mdatePlus } from "../../sourceData.js";
 
 let items = [];
-console.log(outsiderMTS);
 
 function bodyLoad() {
-  let sortedMts = ["--Select OSA Name--", ...outsiderMTS];
+  let sortedMts = ["--Select Employee--", ...sorters, ...mailguards, ...mts];
   sortedMts.sort((a, b) => a.localeCompare(b));
 
   sortedMts.forEach((osaName) => {
@@ -63,10 +62,10 @@ document.getElementById("preview").addEventListener("click", function () {
     const tdth = document.createElement("td");
     const tdnw = document.createElement("td");
     const tdsign = document.createElement("td");
-    const tdrem = document.createElement("td");
+    // const tdrem = document.createElement("td");
 
     // Enable editing in table cells
-    [tdname, tddf, tddt, tdth, tdnw, tdsign, tdrem].forEach((td) => {
+    [tdname, tddf, tddt, tdth, tdnw, tdsign].forEach((td) => {
       td.contentEditable = "true";
     });
 
@@ -76,7 +75,7 @@ document.getElementById("preview").addEventListener("click", function () {
 
     // Append all cells to the row
     // prettier-ignore
-    tr.append(tdsno,tdname,tddf,tddt,tdth,tdnw,tdsign,tdrem);
+    tr.append(tdsno,tdname,tddf,tddt,tdth,tdnw,tdsign);
 
     tbody.appendChild(tr);
   });

@@ -103,6 +103,9 @@ function bodyLoad1() {
   });
 }
 function printClick() {
+  // let gds4 = document.getElementById("optGds4").value;
+  // let gds5 = document.getElementById("optGds5").value;
+
   const fields = {
     optHsa: "hsatest",
     optSuper: "suptest",
@@ -158,8 +161,20 @@ function printClick() {
 
   document.getElementById("setDate").innerHTML = `Tirupati HUB - 2A Dated : ${mdate} & Working Hours From 17:30 To 06:00`;
 
+  // if (gds4 === "N/A" || gds5 === "N/A") {
+  //   document.getElementById("gdsTotal").textContent = "36";
+  // }
+  // if (gds4 === "N/A" && gds5 === "N/A") {
+  //   document.getElementById("gdsTotal").textContent = "41";
+  // }
   window.print();
 }
+
+// document.getElementById("preview").addEventListener("click", function () {
+//   alert("preview working");
+//   document.getElementById("tableContainer").style.display = "block";
+//   document.getElementById("tableContainer").contentEditable = true;
+// });
 
 window.bodyLoad1 = bodyLoad1;
 window.printClick = printClick;

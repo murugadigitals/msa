@@ -1,4 +1,4 @@
-import { outsiderSA, mdate, mdatePlus } from "../sourceData.js";
+import { outsiderSA, mdate, mdatePlus } from "../../sourceData.js";
 
 let items = [];
 
@@ -107,4 +107,5 @@ document.getElementById("genTable").addEventListener("click", function () {
   }
 
   window.print();
+  location.reload();
 });

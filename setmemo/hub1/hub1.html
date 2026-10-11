@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirupati HUB - 1</title>
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../assests/filecss.css">
+
+
+</head>
+
+<body>
+    <br>
+    <div id="inputContainer" style="display: grid;grid-template-columns: 4fr 4fr 4fr;gap: 100px;">
+        <div id="saContainer">
+            <div>
+                <div class="alignNames" style="font-weight: bold;text-decoration: underline;font-size: larger;">
+                    <label for="">Designation</label>
+                    <label for="">Select Official</label>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> HSA </label>
+                    <select name="" id="optHsa" required> </select>
+                </div><br>
+
+                <div class="alignNames">
+                    <label for=""> Supervisor </label>
+                    <select name="" id="optSuper"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> MSA - 1 </label>
+                    <select name="" id="optMsa1"> </select>
+                </div>
+                <br>
+                <!-- <div class="alignNames">
+                    <label for=""> MSA - 2 </label>
+                    <select name="" id="optMsa2"> </select>
+                </div> -->
+                <br>
+                <div class="alignNames">
+                    <label for=""> SPSA - 1 </label>
+                    <select name="" id="optSpsa1"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> SPSA - 2 </label>
+                    <select name="" id="optSpsa2"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> SPSA - 3 </label>
+                    <select name="" id="optSpsa3"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> SPSA - 4 </label>
+                    <select name="" id="optSpsa4"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> SPSA - 5 </label>
+                    <select name="" id="optSpsa5"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> SPSA - 6 </label>
+                    <select name="" id="optSpsa6"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> SPSA - 7 </label>
+                    <select name="" id="optSpsa7"> </select>
+                </div>
+                <br>
+                <br>
+                <div class="alignNames">
+                    <label for=""> PSA - 1 </label>
+                    <select name="" id="optPsa1"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> PSA - 2 </label>
+                    <select name="" id="optPsa2"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> PSA - 3 </label>
+                    <select name="" id="optPsa3"> </select>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div id="mtsContainer">
+            <div>
+                <div class="alignNames" style="font-weight: bold;text-decoration: underline;font-size: larger;">
+                    <label for="">Designation</label>
+                    <label for="">Select Official</label>
+                </div>
+                <br>
+
+                <div class="alignNames">
+                    <label for=""> SA - 1 </label>
+                    <select name="" id="optSa1"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> SA - 2 </label>
+                    <select name="" id="optSa2"> </select>
+                </div>
+                <br>
+
+                <div class="alignNames">
+                    <label for=""> Counter SA </label>
+                    <select name="" id="optCsa"> </select>
+                </div>
+                <br>
+
+                <div class="alignNames">
+                    <label for=""> MTS - 1 </label>
+                    <select name="" id="optMts1"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> MTS - 2 </label>
+                    <select name="" id="optMts2"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> MTS - 3 </label>
+                    <select name="" id="optMts3"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> MTS - 4 </label>
+                    <select name="" id="optMts4"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> MTS - 5 </label>
+                    <select name="" id="optMts5"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> MTS - 6 </label>
+                    <select name="" id="optMts6"> </select>
+                </div>
+                <br>
+                <div class="alignNames">
+                    <label for=""> AP MTS - 7 </label>
+                    <select name="" id="optMts7"> </select>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div id="btnsContainer">
+            <div class="alignNames" style="font-weight: bold;text-decoration: underline;font-size: larger;">
+                <label for="">Designation</label>
+                <label for="">Select Official</label>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 1 </label>
+                <select name="" id="optGds1"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 2 </label>
+                <select name="" id="optGds2"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 3 ( TMO - 1 ) </label>
+                <select name="" id="optGds3"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 4 ( TMO - 1 ) </label>
+                <select name="" id="optGds4"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 5 ( TMO - 1 ) </label>
+                <select name="" id="optGds5"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 6 </label>
+                <select name="" id="optGds6"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 7 ( TMO - 2 ) </label>
+                <select name="" id="optGds7"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 8 ( TMO - 2 ) </label>
+                <select name="" id="optGds8"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 9 ( DBO )</label>
+                <select name="" id="optGds9"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 10 ( MBC ) </label>
+                <select name="" id="optGds10"> </select>
+            </div>
+            <br>
+            <div class="alignNames">
+                <label for=""> GDS - 11 ( Elect )</label>
+                <select name="" id="optGds11"> </select>
+            </div>
+            <br>
+
+            <div>
+                <button id="print">Print</button>
+            </div>
+            <div>
+                <button>Reset</button>
+            </div>
+            <div>
+                <button>Preview</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tableContainer">
+        <div id="headerDiv">
+            <div id="header">
+                <div id="ashok">
+                    <img src="../assests/ashok.png" alt="" width="70" height="80">
+                </div>
+                <div
+                    style="text-align: center;position: relative;text-wrap:nowrap;z-index: 100;line-height: 23px;font-weight: bold;">
+                    <div>भारतीय डाक विभाग </div>
+                    <div>Department of Posts :: India</div>
+                    <div>प्रधान अभिलेख अधिकारी रेल डाक सेवा टि. पि. मंडल तिरुपति कार्यालय - 517501</div>
+                    <div>Head Record Office, RMS TP Dn., Tirupati - 517501</div>
+                </div>
+                <div id="logo">
+                    <img src="../assests/logo.png" alt="" width="140" height="80">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="setmemoDiv">
+            <table id="setmemoTable">
+                <tr>
+                    <th style="border-top-left-radius: 5px;border-top-right-radius: 5px;">SET MEMO</th>
+                </tr>
+                <tr>
+                    <th style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;" id="setDate">
+
+                    </th>
+                </tr>
+            </table>
+        </div><br>
+        <div id="namesDiv">
+            <table id="namesTable">
+                <thead>
+                    <tr class="toprow" style="background-color: rgb(231, 231, 7);text-align: center;color:blue;">
+                        <th rowspan="2" width="" style="border-top-left-radius: 7px;">Designation</th>
+                        <th rowspan="2" width="">Name of the Official<br>( Shri | Smt | Kum )</th>
+                        <th rowspan="2" width="">Designation</th>
+                        <th rowspan="2" width="">Name of the Official<br>( Shri | Smt | Kum )</th>
+                        <th colspan="2" width="" style="border-top-right-radius: 7px;">Working Hours</th>
+                    </tr>
+                    <tr class="toprow" style="background-color: rgb(231, 231, 7);text-align: center;color:blue;">
+                        <th width="">From</th>
+                        <th width="">To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">HSA &nbsp;</td>
+                        <td id="hsatest" style="font-size: 15px;" class="indent">S Maruthi Prasad Reddy</td>
+                        <td class="rightAlign">MTS - 01 &nbsp;</td>
+                        <td id="mts1test" class="indent">RS Chandra Sekhar</td>
+                        <td align="center">08:45:00</td>
+                        <td align="center">16:45:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">Supervisor &nbsp;</td>
+                        <td id="suptest" class="indent">S Chakrapani</td>
+                        <td class="rightAlign">MTS - 02 &nbsp;</td>
+                        <td id="mts2test" class="indent">V Suneetha</td>
+                        <td align="center">08:45:00</td>
+                        <td align="center">16:45:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">MTS - 03 &nbsp;</td>
+                        <td id="mts3test" class="indent">M Jayaraman</td>
+                        <td align="center">08:45:00</td>
+                        <td align="center">16:45:00</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rightAlign">MSA - 1 &nbsp;</td>
+                        <td id="msa1test" class="indent">V Trilokeswar</td>
+                        <td class="rightAlign">MTS - 04 &nbsp;</td>
+                        <td id="mts4test" class="indent">RS Chandra Sekhar</td>
+                        <td align="center">08:45:00</td>
+                        <td align="center">16:45:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">&nbsp;</td>
+                        <td id="msa2test" class="indent"></td>
+                        <td class="rightAlign">MTS - 05 &nbsp;</td>
+                        <td id="mts5test" class="indent">K Ramanjulu</td>
+                        <td align="center">08:45:00</td>
+                        <td align="center">16:45:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">MTS - 06 &nbsp;</td>
+                        <td id="mts6test" class="indent">P Ravi</td>
+                        <td align="center">08:45:00</td>
+                        <td align="center">16:45:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">SPSA - 1 &nbsp;</td>
+                        <td id="spsa1test" class="indent">B Srilatha</td>
+                        <td class="rightAlign" style="margin-top:5px;font-size: 14px;">APMTS - 07 &nbsp;</td>
+                        <td id="mts7test" class="indent">B Raja Naik</td>
+                        <td align="center">08:00:00<br>11:00:00</td>
+                        <td align="center">14:00:00<br>18:00:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">SPSA - 2 &nbsp;</td>
+                        <td id="spsa2test" class="indent">R Sandeep Kumar</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">SPSA - 3 &nbsp;</td>
+                        <td id="spsa3test" class="indent">N Subramanyam</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">SPSA - 4 &nbsp;</td>
+                        <td id="spsa4test" class="indent">B Md Rafi</td>
+                        <td class="rightAlign">GDS - 01 &nbsp;</td>
+                        <td class="indent"><span id="gds1test">OS Arranged</span></td>
+                        <td align="center">10:00:00<br>14:00:00</td>
+                        <td align="center">13:00:00<br>16:00:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">SPSA - 5 &nbsp;</td>
+                        <td id="spsa5test" class="indent">D Durga Prasad</td>
+                        <td class="rightAlign">GDS - 02 &nbsp;</td>
+                        <td class="indent"><span id="gds2test">OS Arranged</span></td>
+                        <td align="center">10:30:00<br>13:00:00</td>
+                        <td align="center">14:00:00<br>16:30:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">SPSA - 6 &nbsp;</td>
+                        <td id="spsa6test" class="indent">B Srikanth Babu</td>
+                        <td class="rightAlign">GDS - 03 &nbsp;</td>
+                        <td class="indent"><span id="gds3test">OS Arranged</span> <br> &nbsp;&nbsp;( From TPT TMO - 1 )
+                        </td>
+                        <td align="center">09:00:00</td>
+                        <td align="center">10:00:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">SPSA - 7 &nbsp;</td>
+                        <td id="spsa7test" class="indent">V Rajesh</td>
+                        <td class="rightAlign">GDS - 04 &nbsp;</td>
+                        <td class="indent"><span id="gds4test">OS Arranged</span> <br> &nbsp;&nbsp;( From TPT TMO - 1 )
+                        </td>
+                        <td align="center">09:00:00</td>
+                        <td align="center">10:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">GDS - 05 &nbsp;</td>
+                        <td class="indent"><span id="gds5test">OS Arranged</span> <br> &nbsp;&nbsp;( From TPT TMO - 1 )
+                        </td>
+                        <td align="center">09:00:00</td>
+                        <td align="center">10:00:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">PSA - 1 &nbsp;</td>
+                        <td id="psa1test" class="indent">R Suresh</td>
+                        <td class="rightAlign">GDS - 06 &nbsp;</td>
+                        <td class="indent" id="gds6test">J Dilli Babu</td>
+                        <td align="center">14:00:00</td>
+                        <td align="center">16:30:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">PSA - 2 &nbsp;</td>
+                        <td id="psa2test" class="indent">R Suresh</td>
+                        <td class="rightAlign">GDS - 07 &nbsp;</td>
+                        <td class="indent"><span id="gds7test">OS Arranged</span> <br> &nbsp;&nbsp;( From TPT TMO - 2 )
+                        </td>
+
+                        <td align="center">14:00:00</td>
+                        <td align="center">16:00:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign">PSA - 3 &nbsp;</td>
+                        <td id="psa3test" class="indent">R Suresh</td>
+                        <td class="rightAlign">GDS - 08 &nbsp;</td>
+                        <td class="indent"><span id="gds8test">OS Arranged</span> <br> &nbsp;&nbsp;( From TPT TMO - 2 )
+                        </td>
+                        <td align="center">14:00:00</td>
+                        <td align="center">16:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="rightAlign">GDS - 09 &nbsp;</td>
+                        <td class="indent"><span id="gds9test">OS Arranged</span> <br> &nbsp;&nbsp;( From DBO TPT )
+                        </td>
+                        <td align="center">14:15:00</td>
+                        <td align="center">16:45:00</td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="rightAlign"> SA - 1 &nbsp;</td>
+                        <td id="sa1test" class="indent">Arushi Kumari</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="rightAlign"> SA - 2 &nbsp;</td>
+                        <td id="sa2test" class="indent">Arushi Kumari</td>
+                        <td class="rightAlign">GDS - 10 &nbsp;</td>
+                        <td class="indent" id="gds10test">OS Arranged ( MBC )</td>
+                        <td align="center">14:00:00</td>
+                        <td align="center">17:00:00</td>
+                    </tr>
+                    <tr>
+                        <td class="rightAlign"> SA - 3 &nbsp;</td>
+                        <td id="csatest" class="indent">Arushi Kumari</td>
+                        <td class="rightAlign">GDS - 11 &nbsp;</td>
+                        <td class="indent" id="gds11test">OS Arranged ( Elec )</td>
+                        <td align="center">14:00:00</td>
+                        <td align="center">17:00:00</td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td style="border-bottom-left-radius: 7px;">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td style="border-bottom-right-radius: 7px;">&nbsp;</td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align: end;margin-top: 60px;" id=hrosign>
+            <p>प्रधान अभिलेख अधिकारी <br> रेल डाक सेवा टि.पि. मंडल तिरुपति - 517 501 <br>Head Record Officer<br> RMS TP
+                Dn.,
+                Tirupati - 517501</p>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script type="module" src="./script.js"></script>
+
+</body>
+
+</html>
